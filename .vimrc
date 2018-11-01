@@ -24,10 +24,22 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+
 :inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" SuperTab
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger="ß"
+
+" Commenting
+let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1"
+map <C-Bslash> <leader>ci
+imap <C-Bslash> <Esc><leader>ci
 
 " Markdown
 let g:markdown_fenced_languages = ['html', 'python', 'swift', 'ruby', 'javascript']
@@ -56,43 +68,6 @@ colorscheme peaksea
 set colorcolumn=80
 set background=dark
 set showmode
-highlight ColorColumn ctermbg=235
-highlight LineNr ctermfg=239
-highlight SignColumn ctermbg=none 
-highlight QuickFixLine ctermbg=none
-
-" Syntax
-" highlight StorageClass ctermfg=46
-" highlight Structure ctermfg=46
-" highlight Typedef ctermfg=46
-" highlight Special ctermfg=white
-" "highlight typescriptReserved ctermfg=white
-" "
-" "highlight PmenuSel ctermfg=46 ctermbg=234
-" "highlight Pmenu ctermfg=white ctermbg=234
-" "highlight ColorColumn ctermbg=234 
-" "highlight VertSplit ctermbg=234 ctermfg=234
-" "highlight StatusLine cterm=none ctermbg=234 ctermfg=46
-" "highlight QuickFixLine ctermbg=none ctermfg=235 
-" "highlight StatusLineNc cterm=none ctermbg=234 ctermfg=none
-" "highlight netrwTreeBar ctermfg=0 ctermbg=0
-" "highlight netrwTreeBarSpace ctermfg=0 ctermbg=0
-" "highlight netrwClassify ctermfg=0
-" "highlight MoreMsg ctermbg=46 ctermfg=234
-" "highlight ModeMsg ctermbg=81 ctermfg=234
-" "highlight SignColumn ctermbg=none
-" "highlight Error ctermfg=9 ctermbg=none
-" "highlight LineNr ctermfg=233
-" "highlight Comment ctermfg=235
-" "highlight Directory ctermfg=white
-" "highlight Nontext ctermfg=0
-" "highlight MatchParen ctermfg=46 ctermbg=none
-" "highlight SpellBad cterm=underline,bold ctermbg=none ctermfg=none
-" "highlight SpellCap cterm=underline,bold ctermbg=none ctermfg=none
-" "highlight SpellLocal cterm=underline,bold ctermbg=none ctermfg=none
-" "highlight markdownListMarker ctermfg=46
-" "highlight markdownOrderedListMarker ctermfg=46
-" "highlight Title ctermfg=white
 
 " Finding
 set path+=**
@@ -110,6 +85,9 @@ let g:ale_lint_on_enter = 0
 let g:ale_fixers = {}
 let g:ale_fixers.javascript = ['eslint']
 let g:ale_sign_column_always = 1
+
+" Netrw
+let g:netrw_localrmdir='rm -r'
 
 " Backups                                                   
 set backupdir=~/.vim/backup//                                                   
@@ -158,9 +136,13 @@ nnoremap <C-b> :bd<CR>
 map <F1> :find<space>
 imap <F1> <Esc>:find<space>
 
+" Vert split find command
+map \\ :vert sf<space>
+imap \\ <Esc>:vert sf<space>
+
 " Background mode
-map <silent> <F5> :set background=dark<CR> 
-imap <silent> <F5> <C-o>:set background=dark<CR> 
+map <silent> <F5> :set background=dark<CR>:source $MYVIMRC<CR>
+imap <silent> <F5> <C-o>:set background=dark<CR>:source $MYVIMRC<CR>
 map <silent> <F6> :set background=light<CR> 
 imap <silent> <F6> <C-o>:set background=light<CR> 
 
