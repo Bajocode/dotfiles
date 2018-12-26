@@ -10,7 +10,7 @@ source ~/.nvm/nvm.sh
 export EDITOR=vim
 
 # Aliases
-alias dot='/usr/bin/git --git-dir=$HOME/.dot/ --work-tree=$HOME'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 alias envsh='vim ~/env.sh'
 alias zshrc='vim ~/.zshrc'
 alias szshrc='source ~/.zshrc'
