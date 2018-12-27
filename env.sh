@@ -17,5 +17,5 @@ alias szshrc='source ~/.zshrc'
 alias lsh='ls -ld .?*'
 alias vimUpdatePlugins='cd ~/.vim_runtime && git pull --rebase'
 alias vimrc='vim ~/.vim_runtime/my_configs.vim'
-alias n='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/notes/; vim .'
+alias n='cd /Users/fabijanbajo/Dropbox/notes; vim .'
 
