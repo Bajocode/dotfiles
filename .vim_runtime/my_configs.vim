@@ -25,3 +25,6 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 " Markdown
 let g:livedown_autorun = 1
 let g:livedown_open = 1
+
+" Highlights / colors
+:hi LineNr ctermfg=242
