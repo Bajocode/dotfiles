@@ -6,11 +6,13 @@
 :set noshowmode
 
 " Window navigation
-" [D[C[A[B
 map [D <C-W>h
 map [C <C-W>l
 map [A <C-W>k
 map [B <C-W>j
+
+" Quitting
+map <leader>q :q!<cr>
 
 " Linting
 let g:ale_linters = { 'javascript': ['eslint'] }
