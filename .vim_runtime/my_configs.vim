@@ -24,6 +24,10 @@ let g:ale_lint_on_text_changed = 'always'
 " Autocomplete
 let g:ycm_autoclose_preview_window_after_completion = 1
 
+" Searching
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_custom_ignore = 'node_modules\|dist\|dist'
+
 " Markdown
 let g:livedown_autorun = 1
 let g:livedown_open = 1

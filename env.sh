@@ -19,3 +19,7 @@ alias vimUpdatePlugins='cd ~/.vim_runtime && git pull --rebase'
 alias vimrc='vim ~/.vim_runtime/my_configs.vim'
 alias n='cd /Users/fabijanbajo/Dropbox/notes; vim .'
 
+# Functions
+gacp () {
+  gaa && gcmsg $1 && gp
+}
