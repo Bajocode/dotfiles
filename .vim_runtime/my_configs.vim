@@ -5,6 +5,10 @@
 :set number
 :set noshowmode
 
+" Colorscheme
+colorscheme solarized
+let g:lightline = { 'colorscheme': 'solarized' }
+
 " Window navigation
 map [D <C-W>h
 map [C <C-W>l
@@ -31,6 +35,3 @@ let g:ctrlp_custom_ignore = 'node_modules\|dist\|dist'
 " Markdown
 let g:livedown_autorun = 1
 let g:livedown_open = 1
-
-" Highlights / colors
-:hi LineNr ctermfg=242
