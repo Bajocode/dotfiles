@@ -21,5 +21,5 @@ alias n='cd /Users/fabijanbajo/Dropbox/notes; vim .'
 
 # Functions
 gacp () {
-  gaa && gcmsg $1 && gp
+  git add -A && git commit -m $1 && git push
 }
