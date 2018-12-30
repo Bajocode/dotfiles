@@ -4,10 +4,9 @@
 :set shiftwidth=2
 :set number
 :set noshowmode
-
-" Colorscheme
-colorscheme solarized
-let g:lightline = { 'colorscheme': 'solarized' }
+:set termguicolors 
+colorscheme gruvbox 
+let g:lightline = { 'colorscheme': 'gruvbox' }
 
 " Window navigation
 map [D <C-W>h
