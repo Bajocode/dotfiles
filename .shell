@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+# add aliases
+source $HOME/.alias
+
+# add commonly used folders to PATH
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+# Fastlane
+export export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
