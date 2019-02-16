@@ -1,0 +1,87 @@
+#!/bin/sh
+
+gacp () {
+  git add -A && git commit -m $1 && git push
+}
+yarnts() {
+  yarn add $1 && yarn add -D @types/$1;
+}
+aliaz() {
+  echo "alias $1='$2'" >> ~/env.sh && source ~/.zshrc
+}
+ke() {
+  kubectl exec -ti $1 $2
+}
+tsupdate() {
+  cat $1 > ~/Developer/own/backend/ts-starter/$1
+}
+gremote-gitlab-personal() {
+  git remote add origin git@personal.gitlab.com:Bajocode/$1.git
+}
+kgpips() {
+  kubectl get pods -l $1 -o=custom-columns=NAME:.metadata.name,IP:.status.podIP
+}
+fancy_echo() {
+  local fmt="$1"; shift
+
+  # shellcheck disable=SC2059
+  printf "\\n$fmt\\n" "$@"
+}
+
+# Webstorm
+alias ws='open -a /Applications/WebStorm.app'
+
+# Docker
+alias dcbu='docker-compose build && docker-compose up'
+alias drmia='docker rmi $(docker images -q)'
+alias drma='docker rm $(docker ps -a -q)'
+alias dil='docker image list'
+alias dcu='docker-compose up'
+alias dcb='docker-compose build'
+# Kubernetes
+alias kgn='kubectl get nodes'
+alias kgp='kubectl get pods'
+alias kgd='kubectl get deployments'
+alias kge='kubectl get events'
+alias kgs='kubectl get services'
+alias kdp='kubectl describe pods'
+alias kdn='kubectl describe nodes'
+alias k='kubectl'
+alias kds='kubectl describe service'
+alias kdd='kubectl describe deployments'
+# Git
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
+alias envsh='vim ~/env.sh'
+alias zshrc='vim ~/.zshrc'
+alias bashrc='vim ~/.bashrc'
+alias szshrc='source ~/.zshrc'
+alias sbashrc='source ~/.bashrc'
+alias lsh='ls -ld .?*'
+alias vimUpdatePlugins='cd ~/.vim_runtime && git pull --rebase'
+alias vimrc='vim ~/.vim_runtime/my_configs.vim'
+alias n='cd /Users/fabijanbajo/Dropbox/notes; vim .'
+alias sshh='ssh bajo@128.199.47.73'
+alias sshj='ssh jenkins@206.189.98.146'
+alias hob='cd ~/Developer/own/backend/hobnob'
+alias ccat='pygmentize -g'
+alias tsinit='cp -a ~/Developer/own/backend/ts-starter/. .; npm i -D typescript tslint tslint-config-airbnb rimraf tsc-watch; npm run build'
+alias gitinit='cp -a ~/Developer/own/backend/git-starter/. .'
+alias yrw='yarn run watch'
+alias uxunit='npm run ts && npx jasmine'
+alias redis-jumbo='redis-cli -h localhost -p 6379 -a Uhgytr$%uy7xxy45HI'
+alias ice='npm run clean && npm run ts && npm run int-test'
+alias dirux='cd ~/Developer/jumbo/backend/jumbo-api/'
+alias dps='docker ps'
+alias dcl='docker container ls'
+alias dipi='docker image prune --filter label=stage=intermediate -f'
+alias dirm='docker image rm'
+alias drmaia='drma -f; drmia -f'
+alias dcs='docker container stop'
+alias dird='cd ~/Desktop'
+alias kga='kubectl get all'
+alias greset='git add . && git reset --hard'
+alias gp='git pull'
+alias gs='git status'
+alias v0='git checkout v0.0.0'
+alias gac='git add . && git commit -m'
+alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
