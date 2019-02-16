@@ -60,6 +60,9 @@ alias kdd='kubectl describe deployments'
 # Notes
 alias n='cd /Users/fabijanbajo/Dropbox/notes; vim .'
 
+# Jupyter notebook
+alias jn='jupyter notebook'
+
 # Git
 gremote_gitlab_personal() { git remote add origin git@personal.gitlab.com:Bajocode/$1.git }
 gacp () { git add -A && git commit -m $1 && git push }
@@ -69,6 +72,9 @@ alias gp='git pull'
 alias gs='git status'
 alias gac='git add . && git commit -m'
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# Kobo export
+alias kobo='cp /Volumes/KOBOeReader/.kobo/KoboReader.sqlite ~/Desktop/; export-kobo.py ~/Desktop/KoboReader.sqlite --highlights-only --output ~/Desktop/highlights.txt; rm ~/Desktop/KoboReader.sqlite'
 
 # hobnob
 alias sshh='ssh bajo@128.199.47.73'
