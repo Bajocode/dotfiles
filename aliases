@@ -44,9 +44,7 @@ alias dcs='docker container stop'
 
 # Kubernetes
 ke() { kubectl exec -ti $1 $2 }
-kgpips() {
-  kubectl get pods -l $1 -o=custom-columns=NAME:.metadata.name,IP:.status.podIP
-}
+kgpips() { kubectl get pods -l $1 -o=custom-columns=NAME:.metadata.name,IP:.status.podIP }
 alias kgn='kubectl get nodes'
 alias kgp='kubectl get pods'
 alias kgd='kubectl get deployments'
@@ -63,12 +61,8 @@ alias kdd='kubectl describe deployments'
 alias n='cd /Users/fabijanbajo/Dropbox/notes; vim .'
 
 # Git
-gremote_gitlab_personal() {
-  git remote add origin git@personal.gitlab.com:Bajocode/$1.git
-}
-gacp () {
-  git add -A && git commit -m $1 && git push
-}
+gremote_gitlab_personal() { git remote add origin git@personal.gitlab.com:Bajocode/$1.git }
+gacp () { git add -A && git commit -m $1 && git push }
 alias gitinit='cp -a ~/Developer/own/backend/git-starter/. .'
 alias greset='git add . && git reset --hard'
 alias gp='git pull'
