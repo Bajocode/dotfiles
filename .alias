@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Shell
-aliaz() { echo "alias $1='$2'" >> ~/.shell && source ~/.zshrc }
+aliaz() { echo "alias $1='$2'" >> ~/.shell && source ~/.zshrc; }
 alias shell='vim ~/.shell'
 alias zshrc='vim ~/.zshrc'
 alias bashrc='vim ~/.bashrc'
@@ -16,8 +16,8 @@ alias vimUpdatePlugins='cd ~/.vim_runtime && git pull --rebase'
 alias vimrc='vim ~/.vim_runtime/my_configs.vim'
 
 # Node
-tsupdate() { cat $1 > ~/Developer/own/backend/ts-starter/$1 }
-yarnts() { yarn add $1 && yarn add -D @types/$1 }
+tsupdate() { cat $1 > ~/Developer/own/backend/ts-starter/$1; }
+yarnts() { yarn add $1 && yarn add -D @types/$1; }
 alias tsinit='cp -a ~/Developer/own/backend/ts-starter/. .; npm i -D typescript tslint tslint-config-airbnb rimraf tsc-watch; npm run build'
 alias yrw='yarn run watch'
 alias uxunit='npm run ts && npx jasmine'
@@ -43,8 +43,8 @@ alias drmaia='drma -f; drmia -f'
 alias dcs='docker container stop'
 
 # Kubernetes
-ke() { kubectl exec -ti $1 $2 }
-kgpips() { kubectl get pods -l $1 -o=custom-columns=NAME:.metadata.name,IP:.status.podIP }
+ke() { kubectl exec -ti $1 $2; }
+kgpips() { kubectl get pods -l $1 -o=custom-columns=NAME:.metadata.name,IP:.status.podIP; }
 alias kgn='kubectl get nodes'
 alias kgp='kubectl get pods'
 alias kgd='kubectl get deployments'
@@ -64,8 +64,8 @@ alias n='cd /Users/fabijanbajo/Dropbox/notes; vim .'
 alias jn='jupyter notebook'
 
 # Git
-gremote_gitlab_personal() { git remote add origin git@personal.gitlab.com:Bajocode/$1.git }
-gacp () { git add -A && git commit -m $1 && git push }
+gremote_gitlab_personal() { git remote add origin git@personal.gitlab.com:Bajocode/$1.git; }
+gacp () { git add -A && git commit -m $1 && git push; }
 alias gitinit='cp -a ~/Developer/own/backend/git-starter/. .'
 alias greset='git add . && git reset --hard'
 alias gp='git pull'
