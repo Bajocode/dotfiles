@@ -71,7 +71,7 @@ alias greset='git add . && git reset --hard'
 alias gp='git pull'
 alias gs='git status'
 alias gac='git add . && git commit -m'
-alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # Kobo export
 alias kobo='cp /Volumes/KOBOeReader/.kobo/KoboReader.sqlite ~/Desktop/; export-kobo.py ~/Desktop/KoboReader.sqlite --highlights-only --output ~/Desktop/highlights.txt; rm ~/Desktop/KoboReader.sqlite'
