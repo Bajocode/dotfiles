@@ -1,0 +1,15 @@
+#!/bin/sh
+
+dotfiles_do() {
+  /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
+}
+
+dotfiles_do pull
+
+# Regenerate Services symlinks
+find $HOME/Library/Services -type l -delete
+ln -s ~/.workflow/services/* $HOME/Library/Services
+
+# Rewrite global shortcuts
+sh -c $HOME/.workflow/shortcuts/write-shortcuts
+

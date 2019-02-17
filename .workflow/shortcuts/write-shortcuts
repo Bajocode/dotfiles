@@ -1,9 +1,12 @@
 #!/bin/sh
 
+SHORTCUTS=$HOME/.workflow/shortcuts/shortcuts
+SHORTCUTS_LOCAL=$HOME/.workflow/shortcuts/shortcuts.local
+
 if [ -f "$HOME/.workflow/shortcuts/shortcuts.local" ]; then
-  defaults write -g NSUserKeyEquivalents "{$(cat shortcuts shortcuts.local)}"
+  defaults write -g NSUserKeyEquivalents "{$(cat $SHORTCUTS $SHORTCUTS_LOCAL)}"
 else
-  defaults write -g NSUserKeyEquivalents "{$(cat shortcuts)}"
+  defaults write -g NSUserKeyEquivalents "{$(cat $SHORTCUTS)}"
 fi
 
 
