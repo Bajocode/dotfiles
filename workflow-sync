@@ -3,9 +3,11 @@
 # Regenerate Services symlinks
 find $HOME/Library/Services -type l -delete
 ln -s $HOME/.workflow/services/* $HOME/Library/Services
+echo "\n● Removed and regenerated symlinks: $HOME/.workflow/services/* --> $HOME/Library/Services"
 
 # Rewrite global shortcuts
 sh -c $HOME/.workflow/shortcuts/write-shortcuts
+echo "\n● Rewritten shared and local shortcuts to macOS defaults:\n\n$(defaults read -g NSUserKeyEquivalents)"
 
 killall cfprefsd
 killall Finder

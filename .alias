@@ -2,7 +2,6 @@
 
 # macos
 alias defsread='defaults read -g NSUserKeyEquivalents'
-alias wfsync='$HOME/workflow-sync && source $HOME/.zshrc'
 
 # Shell
 aliaz() { echo "alias $1='$2'" >> ~/.shell && source ~/.zshrc; }
@@ -79,6 +78,8 @@ alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dots='dot status'
 alias dotd='dot diff'
 alias dotsync='$HOME/dot-sync && source $HOME/.zshrc'
+alias wfsync='$HOME/workflow-sync && source $HOME/.zshrc'
+wfacp() { 'dot add $HOME/.workflow && dot commit -m $1 && dot push'; }
 dotcp() { dot commit -m $1 && dot push; }
 
 # Kobo export
