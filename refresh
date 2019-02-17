@@ -8,8 +8,16 @@ dotfiles_do pull
 
 # Regenerate Services symlinks
 find $HOME/Library/Services -type l -delete
-ln -s ~/.workflow/services/* $HOME/Library/Services
+ln -s $HOME/.workflow/services/* $HOME/Library/Services
 
 # Rewrite global shortcuts
 sh -c $HOME/.workflow/shortcuts/write-shortcuts
 
+# Brew
+brew cleanup
+brew update
+
+# Update vim plugins
+vim +PluginInstall +qall
+
+source "$HOME/.zshrc"
