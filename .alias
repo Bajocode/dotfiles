@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+# macos
+alias defsread='defaults read -g NSUserKeyEquivalents'
+
 # Shell
 aliaz() { echo "alias $1='$2'" >> ~/.shell && source ~/.zshrc; }
 alias shell='vim ~/.shell'
@@ -65,13 +68,16 @@ alias jn='jupyter notebook'
 
 # Git
 gremote_gitlab_personal() { git remote add origin git@personal.gitlab.com:Bajocode/$1.git; }
-gacp () { git add -A && git commit -m $1 && git push; }
+gacp() { git add -A && git commit -m $1 && git push; }
 alias gitinit='cp -a ~/Developer/own/backend/git-starter/. .'
 alias greset='git add . && git reset --hard'
 alias gp='git pull'
 alias gs='git status'
 alias gac='git add . && git commit -m'
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dots='dot status'
+alias dotd='dot diff'
+dotcp() { dot commit -m $1 && dot push; }
 
 # Kobo export
 alias kobo='cp /Volumes/KOBOeReader/.kobo/KoboReader.sqlite ~/Desktop/; export-kobo.py ~/Desktop/KoboReader.sqlite --highlights-only --output ~/Desktop/highlights.txt; rm ~/Desktop/KoboReader.sqlite'
