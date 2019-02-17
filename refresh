@@ -14,10 +14,7 @@ ln -s $HOME/.workflow/services/* $HOME/Library/Services
 sh -c $HOME/.workflow/shortcuts/write-shortcuts
 
 # Brew
-brew cleanup
 brew update
 
 # Update vim plugins
 vim +PluginInstall +qall
-
-source "$HOME/.zshrc"

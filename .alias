@@ -2,6 +2,7 @@
 
 # macos
 alias defsread='defaults read -g NSUserKeyEquivalents'
+alias refresh='$HOME/refresh && source $HOME/.zshrc'
 
 # Shell
 aliaz() { echo "alias $1='$2'" >> ~/.shell && source ~/.zshrc; }
