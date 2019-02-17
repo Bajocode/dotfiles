@@ -9,6 +9,7 @@ Plugin 'Quramy/tsuquyomi'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'shime/vim-livedown'
 Plugin 'Shougo/vimproc.vim'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
