@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Regenerate Services symlinks
+find $HOME/Library/Services -type l -delete
+ln -s $HOME/.workflow/services/* $HOME/Library/Services
+
+# Rewrite global shortcuts
+sh -c $HOME/.workflow/shortcuts/write-shortcuts
+
+killall cfprefsd
+killall Finder
