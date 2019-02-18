@@ -12,7 +12,7 @@
 			<key>NSMenuItem</key>
 			<dict>
 				<key>default</key>
-				<string>Launch Notes copy</string>
+				<string>Launch Calendar</string>
 			</dict>
 			<key>NSMessage</key>
 			<string>runWorkflowAsService</string>
