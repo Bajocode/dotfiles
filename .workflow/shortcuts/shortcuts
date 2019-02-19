@@ -3,3 +3,5 @@
 'Launch iTerm' = '$~@t';
 'Launch Chrome' = '$~@g';
 'Launch Clear' = '$~@l';
+'Launch Vscode' = '$~@v';
+'Launch Webstorm' = '$~@w';
