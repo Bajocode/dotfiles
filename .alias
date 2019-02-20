@@ -11,7 +11,7 @@ alias bashrc='vim ~/.bashrc'
 alias szshrc='source ~/.zshrc'
 alias sbashrc='source ~/.bashrc'
 alias lsh='ls -ld .?*'
-alias ccat='pygmentize -g'
+alias ccat='pygmentize -f terminal256 -O style=native -g'
 alias dird='cd ~/Desktop'
 
 # Vim
@@ -79,6 +79,7 @@ alias dots='dot status'
 alias dotd='dot diff'
 alias dotsync='$HOME/dot-sync && source $HOME/.zshrc'
 alias wfsync='$HOME/workflow-sync && source $HOME/.zshrc'
+alias wfservices='cd $HOME/.workflow/services && open .'
 wfacp() { dot add $HOME/.workflow && dot commit -m $1 && dot push; }
 dotcp() { dot commit -m $1 && dot push; }
 
