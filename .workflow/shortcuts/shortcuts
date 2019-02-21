@@ -1,5 +1,6 @@
 'Launch Notes' = '$~@n';
 'Launch Calendar' = '$~@c';
+'Launch Mail' = '$~@m';
 'Launch iTerm' = '$~@t';
 'Launch Chrome' = '$~@g';
 'Launch Clear' = '$~@l';

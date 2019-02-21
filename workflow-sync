@@ -4,6 +4,7 @@
 find $HOME/Library/Services -type l -delete
 ln -s $HOME/.workflow/services/* $HOME/Library/Services
 echo "\n● Removed and regenerated symlinks: $HOME/.workflow/services/* --> $HOME/Library/Services"
+ls $HOME/Library/Services
 
 # Rewrite global shortcuts
 sh -c $HOME/.workflow/shortcuts/write-shortcuts
