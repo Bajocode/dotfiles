@@ -1,18 +1,14 @@
 " Plugins
-set nocompatible
-filetype off
-set rtp+=~/.vim_runtime/my_plugins/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim_runtime/my_plugins')
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'Quramy/tsuquyomi'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'shime/vim-livedown'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'Valloric/YouCompleteMe'
+Plug 'VundleVim/Vundle.vim'
+Plug 'Quramy/tsuquyomi'
+Plug 'leafgarland/typescript-vim'
+Plug 'shime/vim-livedown'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
-call vundle#end()
-filetype plugin indent on
+call plug#end()
 
 " Vim
 :syntax enable
