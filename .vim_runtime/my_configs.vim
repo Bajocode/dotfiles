@@ -1,7 +1,6 @@
 " Plugins
 call plug#begin('~/.vim_runtime/my_plugins')
 
-Plug 'VundleVim/Vundle.vim'
 Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
 Plug 'shime/vim-livedown'
