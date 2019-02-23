@@ -6,12 +6,8 @@ dotfiles_do() {
 
 dotfiles_do pull
 
-# Regenerate Services symlinks
-find $HOME/Library/Services -type l -delete
-ln -s $HOME/.workflow/services/* $HOME/Library/Services
-
-# Rewrite global shortcuts
-sh -c $HOME/.workflow/shortcuts/write-shortcuts
+# Refresh workflow
+$HOME/workflow-sync
 
 # Brew
 brew update
