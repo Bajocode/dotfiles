@@ -59,6 +59,7 @@ alias kdn='kubectl describe nodes'
 alias k='kubectl'
 alias kds='kubectl describe service'
 alias kdd='kubectl describe deployments'
+alias ksn='helm install ./guestbook/ --name guestbook-demo --namespace'
 
 # Notes
 alias n='cd /Users/fabijanbajo/Dropbox/notes; vim .'
