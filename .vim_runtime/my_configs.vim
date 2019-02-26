@@ -4,6 +4,7 @@ call plug#begin('~/.vim_runtime/my_plugins')
 Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
 Plug 'shime/vim-livedown'
+Plug 'skywind3000/asyncrun.vim'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
 
