@@ -13,6 +13,8 @@ alias sbashrc='source ~/.bashrc'
 alias lsh='ls -ld .?*'
 alias ccat='pygmentize -f terminal256 -O style=native -g'
 alias dird='cd ~/Desktop'
+alias cdux='cd ~/Developer/jumbo/backend/jumbo-api/'
+alias cdvin='cd ~/Developer/vintura/main'
 
 # Vim
 alias vimUpdatePlugins='cd ~/.vim_runtime && git pull --rebase'
@@ -26,7 +28,6 @@ alias yrw='yarn run watch'
 alias uxunit='npm run ts && npx jasmine'
 alias redis-jumbo='redis-cli -h localhost -p 6379 -a Uhgytr$%uy7xxy45HI'
 alias ice='npm run clean && npm run ts && npm run int-test'
-alias dirux='cd ~/Developer/jumbo/backend/jumbo-api/'
 
 # Webstorm
 alias ws='open -a /Applications/WebStorm.app'
