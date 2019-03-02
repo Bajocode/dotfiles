@@ -1,12 +1,14 @@
 " Plugins
 call plug#begin('~/.vim_runtime/my_plugins')
 
+Plug 'twerth/ir_black'
 Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
-Plug 'shime/vim-livedown'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  }
+Plug 'b4b4r07/vim-hcl'
 
 call plug#end()
 
@@ -59,6 +61,11 @@ map <leader>yr :YcmCompleter GoToReferences<cr>
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = 'node_modules\|dist\|dist'
 
-" Markdown
-let g:livedown_autorun = 1
-let g:livedown_open = 1
+" Asyncrun
+let g:asyncrun_open = 8
+:noremap <leader>r :AsyncRun 
+
+" MarkdownPreview
+let g:mkdp_auto_start = 1
+let g:mkdp_auto_close = 1 
+let g:mkdp_refresh_slow = 0 "0: auto refresh markdown at cursor move
