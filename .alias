@@ -13,8 +13,6 @@ alias sbashrc='source ~/.bashrc'
 alias lsh='ls -ld .?*'
 alias ccat='pygmentize -f terminal256 -O style=native -g'
 alias dird='cd ~/Desktop'
-alias cdux='cd ~/Developer/jumbo/backend/jumbo-api/'
-alias cdvin='cd ~/Developer/vintura/main'
 alias c='cat'
 
 # Vim
@@ -26,26 +24,18 @@ tsupdate() { cat $1 > ~/Developer/own/backend/ts-starter/$1; }
 yarnts() { yarn add $1 && yarn add -D @types/$1; }
 alias tsinit='cp -a ~/Developer/own/backend/ts-starter/. .; npm i -D typescript tslint tslint-config-airbnb rimraf tsc-watch; npm run build'
 alias yrw='yarn run watch'
-alias uxunit='npm run ts && npx jasmine'
-alias redis-jumbo='redis-cli -h localhost -p 6379 -a Uhgytr$%uy7xxy45HI'
-alias ice='npm run clean && npm run ts && npm run int-test'
 
 # Webstorm
 alias ws='open -a /Applications/WebStorm.app'
 
 # Docker
-alias dcbu='docker-compose build && docker-compose up'
 alias drmia='docker rmi $(docker images -q)'
 alias drma='docker rm $(docker ps -a -q)'
 alias dil='docker image list'
-alias dcu='docker-compose up'
-alias dcb='docker-compose build'
-alias dps='docker ps'
 alias dcl='docker container ls'
 alias dipi='docker image prune --filter label=stage=intermediate -f'
 alias dirm='docker image rm'
 alias drmaia='drma -f; drmia -f'
-alias dcs='docker container stop'
 
 # Kubernetes
 ke() { kubectl exec -ti $1 $2; }
@@ -62,7 +52,6 @@ alias k='kubectl'
 alias kds='kubectl describe service'
 alias kdd='kubectl describe deployments'
 alias ksn='kubectl config set-context $(kubectl config current-context) --namespace '
-alias kcj="export http_proxy='proxy.emea.ibm.com:80' && export https_proxy='proxy.emea.ibm.com:80' && kubectl config use-context k8s.dev.cloud.jumbo.com"
 
 # Notes
 alias n='cd /Users/fabijanbajo/Dropbox/notes; vim .'
@@ -98,3 +87,6 @@ alias hob='cd ~/Developer/own/backend/hobnob'
 
 # IBM cloud
 alias ic='ibmcloud'
+
+# local alias
+source ~/.alias.local
