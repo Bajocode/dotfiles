@@ -15,6 +15,7 @@ alias ccat='pygmentize -f terminal256 -O style=native -g'
 alias dird='cd ~/Desktop'
 alias cdux='cd ~/Developer/jumbo/backend/jumbo-api/'
 alias cdvin='cd ~/Developer/vintura/main'
+alias c='cat'
 
 # Vim
 alias vimUpdatePlugins='cd ~/.vim_runtime && git pull --rebase'
@@ -61,6 +62,7 @@ alias k='kubectl'
 alias kds='kubectl describe service'
 alias kdd='kubectl describe deployments'
 alias ksn='kubectl config set-context $(kubectl config current-context) --namespace '
+alias kcj="export http_proxy='proxy.emea.ibm.com:80' && export https_proxy='proxy.emea.ibm.com:80' && kubectl config use-context k8s.dev.cloud.jumbo.com"
 
 # Notes
 alias n='cd /Users/fabijanbajo/Dropbox/notes; vim .'
@@ -93,3 +95,6 @@ alias kobo='cp /Volumes/KOBOeReader/.kobo/KoboReader.sqlite ~/Desktop/; export-k
 alias sshh='ssh bajo@128.199.47.73'
 alias sshj='ssh jenkins@206.189.98.146'
 alias hob='cd ~/Developer/own/backend/hobnob'
+
+# IBM cloud
+alias ic='ibmcloud'

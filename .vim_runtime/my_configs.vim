@@ -67,5 +67,6 @@ let g:asyncrun_open = 8
 
 " MarkdownPreview
 let g:mkdp_auto_start = 1
-let g:mkdp_auto_close = 1 
+let g:mkdp_auto_close = 0 
 let g:mkdp_refresh_slow = 0 "0: auto refresh markdown at cursor move
+autocmd FileType markdown set nofoldenable 

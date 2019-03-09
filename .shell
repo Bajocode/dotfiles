@@ -28,6 +28,15 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# kubernetes
+# source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+# PS1='$(kube_ps1)'$PS1
+autoload -U colors; colors
+source /usr/local/Cellar/zsh-kubectl-prompt/v1.0.1/etc/zsh-kubectl-prompt/kubectl.zsh
+RPROMPT='%{$fg[blue]%}$ZSH_KUBECTL_PROMPT%{$reset_color%}'
+
+# IBM cloud
+source /usr/local/ibmcloud/autocomplete/zsh_autocomplete
+
 # vault
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/vault vault
+export VAULT_ADDR='http://127.0.0.1:8200'
