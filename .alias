@@ -4,15 +4,18 @@
 alias defsread='defaults read -g NSUserKeyEquivalents'
 
 # Shell
-aliaz() { echo "alias $1='$2'" >> ~/.shell && source ~/.zshrc; }
-alias shell='vim ~/.shell'
+alias vshell='vim ~/.shell'
+alias valias='vim ~/.alias'
 alias zshrc='vim ~/.zshrc'
 alias bashrc='vim ~/.bashrc'
 alias szshrc='source ~/.zshrc'
 alias sbashrc='source ~/.bashrc'
 alias lsh='ls -ld .?*'
 alias ccat='pygmentize -f terminal256 -O style=native -g'
-alias dird='cd ~/Desktop'
+alias cdd='cd ~/Desktop'
+alias cddev='cd ~/dev'
+alias cdops='cd ~/dev/own/devops'
+alias cdtool='cd ~/dev/toolchain/toolbox'
 alias c='cat'
 
 # Vim
@@ -20,9 +23,9 @@ alias vimUpdatePlugins='cd ~/.vim_runtime && git pull --rebase'
 alias vimrc='vim ~/.vim_runtime/my_configs.vim'
 
 # Node
-tsupdate() { cat $1 > ~/Developer/own/backend/ts-starter/$1; }
+tsupdate() { cat $1 > ~/dev/own/backend/ts-starter/$1; }
 yarnts() { yarn add $1 && yarn add -D @types/$1; }
-alias tsinit='cp -a ~/Developer/own/backend/ts-starter/. .; npm i -D typescript tslint tslint-config-airbnb rimraf tsc-watch; npm run build'
+alias tsinit='cp -a ~/dev/own/backend/ts-starter/. .; npm i -D typescript tslint tslint-config-airbnb rimraf tsc-watch; npm run build'
 alias yrw='yarn run watch'
 
 # Webstorm
@@ -38,8 +41,11 @@ alias dirm='docker image rm'
 alias drmaia='drma -f; drmia -f'
 
 # Kubernetes
-ke() { kubectl exec -ti $1 $2; }
-kgpips() { kubectl get pods -l $1 -o=custom-columns=NAME:.metadata.name,IP:.status.podIP; }
+alias k='kubectl'
+alias kg='kubectl get'
+alias ke='kubectl explain'
+alias kds='kubectl describe'
+alias kdl='kubectl delete'
 alias kgn='kubectl get nodes'
 alias kgp='kubectl get pods'
 alias kgd='kubectl get deployments'
@@ -48,10 +54,9 @@ alias kgs='kubectl get services'
 alias kga='kubectl get all'
 alias kdp='kubectl describe pods'
 alias kdn='kubectl describe nodes'
-alias k='kubectl'
 alias kds='kubectl describe service'
 alias kdd='kubectl describe deployments'
-alias ksn='kubectl config set-context $(kubectl config current-context) --namespace '
+alias kda='kubectl delete all --all'
 
 # Notes
 alias n='cd /Users/fabijanbajo/Dropbox/notes; vim .'
@@ -62,7 +67,7 @@ alias jn='jupyter notebook'
 # Git
 gremote_gitlab_personal() { git remote add origin git@personal.gitlab.com:Bajocode/$1.git; }
 gacp() { git add -A && git commit -m $1 && git push; }
-alias gitinit='cp -a ~/Developer/own/backend/git-starter/. .'
+alias gitinit='cp -a ~/dev/own/backend/git-starter/. .'
 alias greset='git add . && git reset --hard'
 alias gp='git pull'
 alias gs='git status'
@@ -83,7 +88,7 @@ alias kobo='cp /Volumes/KOBOeReader/.kobo/KoboReader.sqlite ~/Desktop/; export-k
 # hobnob
 alias sshh='ssh bajo@128.199.47.73'
 alias sshj='ssh jenkins@206.189.98.146'
-alias hob='cd ~/Developer/own/backend/hobnob'
+alias hob='cd ~/dev/own/backend/hobnob'
 
 # IBM cloud
 alias ic='ibmcloud'

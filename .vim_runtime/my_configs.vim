@@ -9,6 +9,7 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  }
 Plug 'b4b4r07/vim-hcl'
+Plug 'andrewstuart/vim-kubernetes'
 
 call plug#end()
 
@@ -38,8 +39,10 @@ map <C-S-Down> :resize -2<cr>
 map <leader>tt :tabnext<cr>
 map <leader>tT :tabprevious<cr>
 
-" Quitting
+" Vim
 map <leader>q :q!<cr>
+map <c-m> :messages<cr>
+map <leader>b :Bclose<cr>
 
 " Linting
 let g:ale_linters = { 'javascript': ['eslint'], 'typescript': ['tslint'] }
@@ -70,3 +73,6 @@ let g:mkdp_auto_start = 1
 let g:mkdp_auto_close = 0 
 let g:mkdp_refresh_slow = 0 "0: auto refresh markdown at cursor move
 autocmd FileType markdown set nofoldenable 
+
+" Kubernetes
+map <leader>k :KubeApply<cr>
