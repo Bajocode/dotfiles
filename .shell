@@ -45,9 +45,11 @@ export K8S_SUB="toolchain-dev.ams03.containers.appdomain.cloud"
 # stern
 source <(stern --completion=zsh)
 
-#### *k8s pod: `concourse-postgresql`*
 # IBM cloud
-source /usr/local/ibmcloud/autocomplete/zsh_autocomplete
+IC_DIR=/usr/local/ibmcloud
+if [ -d $IC_DIR ]; then
+  source ${IC_DIR}/ibmcloud/autocomplete/zsh_autocomplete
+fi
 
 # vault
 export VAULT_ADDR='http://127.0.0.1:8200'
