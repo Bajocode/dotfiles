@@ -1,5 +1,6 @@
 'Launch Notes' = '$~@n';
-'Launch Notes' = '$^~@n';
+'Launch Notes MD' = '$^~@n';
+'Launch Notes Hub' = '^~@n';
 'Launch Calendar' = '$~@c';
 'Launch Mail' = '$~@m';
 'Launch Spotify' = '$~@s';

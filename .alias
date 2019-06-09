@@ -16,6 +16,7 @@ alias cdd='cd ~/Desktop'
 alias cddev='cd ~/dev'
 alias cdops='cd ~/dev/own/devops'
 alias cdtool='cd ~/dev/toolchain/toolbox'
+alias cdvi='cd ~/dev/vinturas'
 alias c='cat'
 
 # Vim
@@ -24,7 +25,18 @@ alias vimrc='vim ~/.vim_runtime/my_configs.vim'
 
 # Node
 tsupdate() { cat $1 > ~/dev/own/backend/ts-starter/$1; }
-yarnts() { yarn add $1 && yarn add -D @types/$1; }
+yarnts() {
+  for package in "$@"
+  do
+    yarn add $package && yarn add -D @types/$package
+  done
+}
+npmts() {
+  for package in "$@"
+  do
+    npm install $package && npm install -D @types/$package
+  done
+}
 alias tsinit='cp -a ~/dev/own/backend/ts-starter/. .; npm i -D typescript tslint tslint-config-airbnb rimraf tsc-watch; npm run build'
 alias yrw='yarn run watch'
 
@@ -57,9 +69,12 @@ alias kdn='kubectl describe nodes'
 alias kds='kubectl describe service'
 alias kdd='kubectl describe deployments'
 alias kda='kubectl delete all --all'
+alias rb="rolebinding"
+alias crb="clusterrolebinding"
+alias kbb="kubectl run busybox --image=busybox:1.28 --rm -it --restart=Never --command --"
 
 # Notes
-alias n='cd /Users/fabijanbajo/Dropbox/notes; vim .'
+alias n='cd /Users/fabijanbajo/Dropbox/dev/notes; code .'
 
 # Jupyter notebook
 alias jn='jupyter notebook'
@@ -68,9 +83,12 @@ alias jn='jupyter notebook'
 gremote_gitlab_personal() { git remote add origin git@personal.gitlab.com:Bajocode/$1.git; }
 gacp() { git add -A && git commit -m $1 && git push; }
 alias gitinit='cp -a ~/dev/own/backend/git-starter/. .'
+alias gcd='git checkout development'
+alias gcm='git checkout master'
 alias greset='git add . && git reset --hard'
 alias gp='git pull'
 alias gs='git status'
+alias gl='git log'
 alias gac='git add . && git commit -m'
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dots='dot status'
@@ -85,13 +103,14 @@ dotcp() { dot commit -m $1 && dot push; }
 # Kobo export
 alias kobo='cp /Volumes/KOBOeReader/.kobo/KoboReader.sqlite ~/Desktop/; export-kobo.py ~/Desktop/KoboReader.sqlite --highlights-only --output ~/Desktop/highlights.txt; rm ~/Desktop/KoboReader.sqlite'
 
-# hobnob
-alias sshh='ssh bajo@128.199.47.73'
-alias sshj='ssh jenkins@206.189.98.146'
-alias hob='cd ~/dev/own/backend/hobnob'
-
 # IBM cloud
 alias ic='ibmcloud'
+alias icb='ic billing resource-group-usage Vinturas-Dev'
+alias ics='ic ks messages && ic billing resource-group-usage Vinturas-Dev && ic ks cluster-get --cluster vin-dev'
 
 # local alias
 source ~/.alias.local
+
+# Current project
+alias cdni='~/dev/own/notesapp/notesapp-frontend-ios'
+alias cdnm='~/dev/own/notesapp/notesapp-microservice-notes'

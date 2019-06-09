@@ -3,12 +3,16 @@
 # add aliases
 source $HOME/.alias
 
+# iTerm
+# enable scrolling: https://apple.stackexchange.com/questions/332900/mouse-scroll-stopped-working-with-less-in-terminal
+export LESS="-R"
+
 # add commonly used folders to PATH
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # go
 export GOPATH="$(brew --prefix)/Cellar/go/1.11.5/"
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$(go env GOPATH)/bin
 
 # https://hyperledger-fabric.readthedocs.io/en/latest/install.html
 export PATH=$PATH:$HOME/hyperledger-fabric/fabric-samples/bin
@@ -29,15 +33,25 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # kubernetes
-export KUBECONFIG=$HOME/.kube/ibmcloud-vinturas:$HOME/.kube/gcloud-action:$HOME/.kube/aws-jumbo
+export KUBECONFIG=$HOME/.bluemix/plugins/container-service/clusters/vin-dev/kube-config-ams03-vin-dev.yml:$HOME/.bluemix/plugins/container-service/clusters/ibm-free/kube-config-hou02-ibm-free.yml
 source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 PS1='$(kube_ps1)'$PS1
 # autoload -U colors; colors
 # source /usr/local/Cellar/zsh-kubectl-prompt/v1.0.1/etc/zsh-kubectl-prompt/kubectl.zsh
 # RPROMPT='%{$fg[blue]%}$ZSH_KUBECTL_PROMPT%{$reset_color%}'
+export K8S_EXAMPLE_SRV="k run --generator=run-pod/v1 -it srvlookup --image=tutum/dnsutils --rm --restart=Never -- dig SRV kubia.default.svc.cluster.local"
+export K8S_SUB="toolchain-dev.ams03.containers.appdomain.cloud" 
 
+# stern
+source <(stern --completion=zsh)
+
+#### *k8s pod: `concourse-postgresql`*
 # IBM cloud
 source /usr/local/ibmcloud/autocomplete/zsh_autocomplete
 
 # vault
 export VAULT_ADDR='http://127.0.0.1:8200'
+
+# fastlane
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
