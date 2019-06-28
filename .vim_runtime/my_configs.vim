@@ -11,6 +11,8 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  }
 Plug 'b4b4r07/vim-hcl'
 Plug 'andrewstuart/vim-kubernetes'
 Plug 'martinda/Jenkinsfile-vim-syntax'
+Plug 'alvan/vim-closetag'
+Plug 'peitalin/vim-jsx-typescript'
 
 call plug#end()
 
@@ -18,14 +20,17 @@ call plug#end()
 :syntax enable
 :set tabstop=2
 :set shiftwidth=2
+:set expandtab
 autocmd FileType go,c setlocal tabstop=8 shiftwidth=8 noexpandtab 
+autocmd BufRead,BufNewFile Makefile setlocal tabstop=8 shiftwidth=8 noexpandtab
 
 :set number
 :set noshowmode
-:set termguicolors 
+" :set termguicolors 
 :set foldcolumn=0
-colorscheme ir_black 
-let g:lightline = { 'colorscheme': 'powerline' }
+colorscheme solarized 
+:set bg=dark
+let g:lightline = { 'colorscheme': 'solarized' }
 
 " Window navigation
 map [D <C-W>h
@@ -69,6 +74,9 @@ map <leader>yg :YcmCompleter GoTo<cr>
 map <leader>yd :YcmCompleter GoToDefinition<cr>
 map <leader>yr :YcmCompleter GoToReferences<cr>
 
+" vim-closetag
+let g:closetag_filenames = '*.html,*.tsx,*.jsx'
+
 " Searching
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = 'node_modules\|dist\|dist'
@@ -85,3 +93,6 @@ autocmd FileType markdown set nofoldenable
 
 " Kubernetes
 map <leader>k :KubeApply<cr>
+
+" Docker
+autocmd BufRead,BufNewFile Dockerfile* set ft=Dockerfile

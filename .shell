@@ -11,7 +11,8 @@ export LESS="-R"
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # go
-export GOPATH="$(brew --prefix)/Cellar/go/1.11.5/"
+export GOPATH="$(brew --prefix)/Cellar/go/1.12.6/"
+export GOROOT="/usr/local/opt/go/libexec/"
 export PATH=$PATH:$(go env GOPATH)/bin
 
 # https://hyperledger-fabric.readthedocs.io/en/latest/install.html
@@ -33,7 +34,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # kubernetes
-export KUBECONFIG=$HOME/.bluemix/plugins/container-service/clusters/vin-dev/kube-config-ams03-vin-dev.yml:$HOME/.bluemix/plugins/container-service/clusters/ibm-free/kube-config-hou02-ibm-free.yml
+export KUBECONFIG=$HOME/.bluemix/plugins/container-service/clusters/vin-dev/kube-config-ams03-vin-dev.yml:$HOME/.kube/gke_fabijanbajo_us-central1-a_fabijanbajo
 source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 PS1='$(kube_ps1)'$PS1
 # autoload -U colors; colors
@@ -48,8 +49,12 @@ source <(stern --completion=zsh)
 # IBM cloud
 IC_DIR=/usr/local/ibmcloud
 if [ -d $IC_DIR ]; then
-  source ${IC_DIR}/ibmcloud/autocomplete/zsh_autocomplete
+  source ${IC_DIR}/autocomplete/zsh_autocomplete
 fi
+
+# Gcloud
+CLOUD_SDK_HOME=/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk
+source "${CLOUD_SDK_HOME}/completion.zsh.inc"
 
 # vault
 export VAULT_ADDR='http://127.0.0.1:8200'

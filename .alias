@@ -17,6 +17,8 @@ alias cddev='cd ~/dev'
 alias cdops='cd ~/dev/own/devops'
 alias cdtool='cd ~/dev/toolchain/toolbox'
 alias cdvi='cd ~/dev/vinturas'
+alias cdjo='cd $GOPATH/src/github.com/bajocode/'
+alias cdc='cd ~/dev/own/fabijanbajo.com'
 alias c='cat'
 
 # Vim
@@ -72,6 +74,13 @@ alias kda='kubectl delete all --all'
 alias rb="rolebinding"
 alias crb="clusterrolebinding"
 alias kbb="kubectl run busybox --image=busybox:1.28 --rm -it --restart=Never --command --"
+function copypullsecrets() {
+  NAMESPACE=$1 \
+    cat ~/dev/vinturas/pull.yaml | kubectl apply -n $NAMESPACE \
+    -f - kubectl patch serviceaccount default \
+    -n $NAMESPACE \
+    -p '{"imagePullSecrets": [{"name": "ibmcloud-docker-pullsecret"}]}'
+}
 
 # Notes
 alias n='cd /Users/fabijanbajo/Dropbox/dev/notes; code .'
@@ -110,7 +119,3 @@ alias ics='ic ks messages && ic billing resource-group-usage Vinturas-Dev && ic 
 
 # local alias
 source ~/.alias.local
-
-# Current project
-alias cdni='~/dev/own/notesapp/notesapp-frontend-ios'
-alias cdnm='~/dev/own/notesapp/notesapp-microservice-notes'
