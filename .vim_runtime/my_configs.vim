@@ -13,6 +13,7 @@ Plug 'andrewstuart/vim-kubernetes'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'alvan/vim-closetag'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'lilyball/vim-swift'
 
 call plug#end()
 
@@ -21,16 +22,17 @@ call plug#end()
 :set tabstop=2
 :set shiftwidth=2
 :set expandtab
-autocmd FileType go,c setlocal tabstop=8 shiftwidth=8 noexpandtab 
+autocmd FileType go,c,cpp setlocal tabstop=8 shiftwidth=8 noexpandtab 
+autocmd FileType java,swift setlocal tabstop=4 shiftwidth=4 noexpandtab 
 autocmd BufRead,BufNewFile Makefile setlocal tabstop=8 shiftwidth=8 noexpandtab
 
 :set number
 :set noshowmode
-" :set termguicolors 
+:set termguicolors 
 :set foldcolumn=0
-colorscheme solarized 
+colorscheme ir_dark
 :set bg=dark
-let g:lightline = { 'colorscheme': 'solarized' }
+" let g:lightline = { 'colorscheme': 'solarized' }
 
 " Window navigation
 map [D <C-W>h
@@ -49,11 +51,13 @@ map <leader>tt :tabnext<cr>
 map <leader>tT :tabprevious<cr>
 
 " Vim
+map <space> :%s/
 map <leader>q :q!<cr>
 map <c-m> :messages<cr>
 map <leader>b :Bclose<cr>
 map <leader>y "*y
 map <leader>p "*p
+map <leader>d "*d
 
 " Linting
 let g:ale_linter_aliases = {'typescriptreact': 'typescript'}
@@ -86,13 +90,16 @@ let g:asyncrun_open = 8
 :noremap <leader>r :AsyncRun 
 
 " MarkdownPreview
-let g:mkdp_auto_start = 1
+let g:mkdp_auto_start = 0
 let g:mkdp_auto_close = 0 
 let g:mkdp_refresh_slow = 0 "0: auto refresh markdown at cursor move
+map <leader>mo :MarkdownPreview<cr>
+map <leader>ms :MarkdownPreviewStop<cr>
 autocmd FileType markdown set nofoldenable 
 
 " Kubernetes
-map <leader>k :KubeApply<cr>
+map <leader>ka :KubeApply<cr>
+map <leader>kd :KubeDelete<cr>
 
 " Docker
 autocmd BufRead,BufNewFile Dockerfile* set ft=Dockerfile

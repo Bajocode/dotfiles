@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/zs
 
 # add aliases
 source $HOME/.alias
@@ -34,7 +34,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # kubernetes
-export KUBECONFIG=$HOME/.bluemix/plugins/container-service/clusters/vin-dev/kube-config-ams03-vin-dev.yml:$HOME/.kube/gke_fabijanbajo_us-central1-a_fabijanbajo
+export KUBECONFIG=$HOME/.kube/gke_fabijanbajo_us-central1-a_fabijanbajo:$HOME/.bluemix/plugins/container-service/clusters/vin-dev/kube-config-ams03-vin-dev.yml:$HOME/.bluemix/plugins/container-service/clusters/orderer-staging/kube-config-fra02-orderer-staging.yml:$HOME/.bluemix/plugins/container-service/clusters/nvd-staging/kube-config-fra02-nvd-staging.yml:$HOME/.bluemix/plugins/container-service/clusters/axess-staging/kube-config-fra02-axess-staging.yml:$HOME/.bluemix/plugins/container-service/clusters/koopman-staging/kube-config-fra02-koopman-staging.yml:$HOME/.bluemix/plugins/container-service/clusters/vinturas-staging/kube-config-fra02-vinturas-staging.yml:$HOME/.bluemix/plugins/container-service/clusters/bn1elaef0kdql1v6g690/kube-config-fra02-completenetwork-development.yml:$HOME/.bluemix/plugins/container-service/clusters/vinturas-test/kube-config-fra02-vinturas-test.yml:$HOME/.bluemix/plugins/container-service/clusters/nvd-test/kube-config-fra02-nvd-test.yml:$HOME/.bluemix/plugins/container-service/clusters/koopman-test/kube-config-fra02-koopman-test.yml:$HOME/.bluemix/plugins/container-service/clusters/axess-test/kube-config-fra02-axess-test.yml:$HOME/.bluemix/plugins/container-service/clusters/orderer-test/kube-config-fra02-orderer-test.yml
 source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 PS1='$(kube_ps1)'$PS1
 # autoload -U colors; colors
@@ -42,9 +42,6 @@ PS1='$(kube_ps1)'$PS1
 # RPROMPT='%{$fg[blue]%}$ZSH_KUBECTL_PROMPT%{$reset_color%}'
 export K8S_EXAMPLE_SRV="k run --generator=run-pod/v1 -it srvlookup --image=tutum/dnsutils --rm --restart=Never -- dig SRV kubia.default.svc.cluster.local"
 export K8S_SUB="toolchain-dev.ams03.containers.appdomain.cloud" 
-
-# stern
-source <(stern --completion=zsh)
 
 # IBM cloud
 IC_DIR=/usr/local/ibmcloud

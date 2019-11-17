@@ -14,11 +14,14 @@ alias lsh='ls -ld .?*'
 alias ccat='pygmentize -f terminal256 -O style=native -g'
 alias cdd='cd ~/Desktop'
 alias cddev='cd ~/dev'
-alias cdops='cd ~/dev/own/devops'
-alias cdtool='cd ~/dev/toolchain/toolbox'
-alias cdvi='cd ~/dev/vinturas'
+alias cdops='cd ~/dev/work/devops'
+alias cdtool='cd ~/dev/office/toolchain/toolbox'
+alias cdvi='cd ~/dev/office/vinturas'
 alias cdjo='cd $GOPATH/src/github.com/bajocode/'
-alias cdc='cd ~/dev/own/fabijanbajo.com'
+alias cdf='cd ~/dev/portfolio/fabijanbajo.com'
+alias cdn='cd ~/dev/portfolio/notesapp-microservices-ios'
+alias cdo='cd ~/dev/portfolio/ops'
+alias cdw='cd ~/dev/work'
 alias c='cat'
 
 # Vim
@@ -41,6 +44,7 @@ npmts() {
 }
 alias tsinit='cp -a ~/dev/own/backend/ts-starter/. .; npm i -D typescript tslint tslint-config-airbnb rimraf tsc-watch; npm run build'
 alias yrw='yarn run watch'
+alias nrw='npm run watch'
 
 # Webstorm
 alias ws='open -a /Applications/WebStorm.app'
@@ -53,6 +57,22 @@ alias dcl='docker container ls'
 alias dipi='docker image prune --filter label=stage=intermediate -f'
 alias dirm='docker image rm'
 alias drmaia='drma -f; drmia -f'
+dbvi() {
+  local repository=$1
+  local tag="${2:-latest}"
+  local dockerfile="${3:-Dockerfile}"
+  local full=de.icr.io/vin-dev/${repository}:${tag}
+  
+  docker build --no-cache -f $dockerfile -t $full . && docker push $full
+}
+dbf() {
+  local repository=$1
+  local tag="${2:-latest}"
+  local dockerfile="${3:-Dockerfile}"
+  local full=gcr.io/fabijanbajo/${repository}:${tag}
+  
+  docker build --no-cache -f $dockerfile -t $full . && docker push $full
+}
 
 # Kubernetes
 alias k='kubectl'
@@ -81,9 +101,18 @@ function copypullsecrets() {
     -n $NAMESPACE \
     -p '{"imagePullSecrets": [{"name": "ibmcloud-docker-pullsecret"}]}'
 }
+function webhook_helm_sync() {
+  helm package ~/dev/portfolio/k8s-webhook/k8s-webhook -d ~/dev/portfolio/helmcharts  && \
+  helm repo index ~/dev/portfolio/helmcharts --url https://bajocode.github.io/helmcharts/ && \
+  cd ~/dev/portfolio/helmcharts && gacp "Update k8s-webhooks helm configuration" > /dev/null 2>&1 && \
+  helm repo update
+}
 
 # Notes
-alias n='cd /Users/fabijanbajo/Dropbox/dev/notes; code .'
+alias n='cd /Users/fabijanbajo/Dropbox/dev/notes; vim'
+
+# Carreer
+alias c='cd ~/Dropbox/career && open .'
 
 # Jupyter notebook
 alias jn='jupyter notebook'
@@ -108,6 +137,7 @@ alias wfservices='cd $HOME/.workflow/services && open .'
 alias wfshortcuts='vim $HOME/.workflow/shortcuts'
 wfacp() { dot add $HOME/.workflow && dot commit -m $1 && dot push; }
 dotcp() { dot commit -m $1 && dot push; }
+gprune() { git fetch -p && for branch in `git branch -vv --no-color | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done }
 
 # Kobo export
 alias kobo='cp /Volumes/KOBOeReader/.kobo/KoboReader.sqlite ~/Desktop/; export-kobo.py ~/Desktop/KoboReader.sqlite --highlights-only --output ~/Desktop/highlights.txt; rm ~/Desktop/KoboReader.sqlite'
@@ -115,6 +145,7 @@ alias kobo='cp /Volumes/KOBOeReader/.kobo/KoboReader.sqlite ~/Desktop/; export-k
 # IBM cloud
 alias ic='ibmcloud'
 alias icb='ic billing resource-group-usage Vinturas-Dev'
+alias icd='open https://eu-de.containers.cloud.ibm.com/kubeproxy/clusters/3dcb2622595f41aab94ebd5818f17cb1/service/#!/overview?namespace=_all'
 alias ics='ic ks messages && ic billing resource-group-usage Vinturas-Dev && ic ks cluster-get --cluster vin-dev'
 
 # local alias

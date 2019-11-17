@@ -10,3 +10,4 @@
 'Launch Clear' = '$~@l';
 'Launch Vscode' = '$^~@v';
 'Launch Webstorm' = '$^~@w';
+'Launch GoogleInterviewDrive' = '$^~@g';
