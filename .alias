@@ -149,5 +149,8 @@ alias icd='open https://eu-de.containers.cloud.ibm.com/kubeproxy/clusters/3dcb26
 alias ics='ic ks messages && ic billing resource-group-usage Vinturas-Dev && ic ks cluster-get --cluster vin-dev'
 alias icclusters='ibmcloud ks clusters -s | awk '\''{print $1}'\'' | xargs -I {} ibmcloud ks cluster config --cluster {}'
 
+# python
+alias python=/usr/local/bin/python3
+
 # local alias
 source ~/.alias.local
