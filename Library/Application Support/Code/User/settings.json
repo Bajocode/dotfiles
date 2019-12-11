@@ -77,5 +77,6 @@
     },
     "ibm-blockchain-platform.fabric.environments": [],
     "ibm-blockchain-platform.ext.repositories": [],
-    "ibm-blockchain-platform.ext.enableLocalFabric": true
+    "ibm-blockchain-platform.ext.enableLocalFabric": true,
+    "ibm-blockchain-platform.ext.bypassPreReqs": true
 }
