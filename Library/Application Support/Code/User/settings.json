@@ -76,5 +76,6 @@
         "**/.factorypath": true
     },
     "ibm-blockchain-platform.fabric.environments": [],
-    "ibm-blockchain-platform.ext.repositories": []
+    "ibm-blockchain-platform.ext.repositories": [],
+    "ibm-blockchain-platform.ext.enableLocalFabric": true
 }
