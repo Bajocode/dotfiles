@@ -14,14 +14,10 @@ alias lsh='ls -ld .?*'
 alias ccat='pygmentize -f terminal256 -O style=native -g'
 alias cdd='cd ~/Desktop'
 alias cddev='cd ~/dev'
-alias cdops='cd ~/dev/work/devops'
-alias cdtool='cd ~/dev/office/toolchain/toolbox'
 alias cdvi='cd ~/dev/office/vinturas'
-alias cdjo='cd $GOPATH/src/github.com/bajocode/'
 alias cdf='cd ~/dev/portfolio/fabijanbajo.com'
 alias cdn='cd ~/dev/portfolio/notesapp-microservices-ios'
-alias cdo='cd ~/dev/portfolio/ops'
-alias cdw='cd ~/dev/work'
+alias cdi='cd ~/Dropbox/dev/interview'
 alias c='cat'
 
 # Vim
@@ -138,7 +134,7 @@ alias wfsync='$HOME/workflow-sync && source $HOME/.zshrc'
 alias wfservices='cd $HOME/.workflow/services && open .'
 alias wfshortcuts='vim $HOME/.workflow/shortcuts'
 wfacp() { dot add $HOME/.workflow && dot commit -m $1 && dot push; }
-dotcp() { dot commit -m $1 && dot push; }
+dotcp() { dot add -u && dot commit -m $1 && dot push; }
 gprune() { git fetch -p && for branch in `git branch -vv --no-color | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done }
 
 # Kobo export
