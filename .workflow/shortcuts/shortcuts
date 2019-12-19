@@ -1,13 +1,10 @@
 'Launch Notes' = '$~@n';
 'Launch Reminders' = '$~@r';
-'Launch Notes MD' = '$^~@n';
-'Launch Notes Hub' = '^~@n';
 'Launch Calendar' = '$~@c';
 'Launch Mail' = '$~@m';
 'Launch Spotify' = '$~@s';
 'Launch iTerm' = '$~@t';
 'Launch Chrome' = '$~@g';
-'Launch Clear' = '$~@l';
 'Launch Vscode' = '$^~@v';
-'Launch Webstorm' = '$^~@w';
-'Launch GoogleInterviewDrive' = '$^~@g';
+'Launch OfficeMail' = '$^~@m';
+'Launch OfficeCalendar' = '$^~@c';
