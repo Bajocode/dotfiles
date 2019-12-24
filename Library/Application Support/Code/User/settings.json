@@ -46,8 +46,11 @@
         },
         "developmentMode": false
     },
-    "[go]": {
+    "[go, c, c++]": {
         "editor.tabSize": 8
+    },
+     "[java]": {
+        "editor.tabSize": 4
     },
     "files.associations": {
         "Dockerfile*": "dockerfile"
