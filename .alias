@@ -51,8 +51,8 @@ alias drma='docker rm $(docker ps -a -q)'
 alias dil='docker image list'
 alias dcl='docker container ls'
 alias dipi='docker image prune --filter label=stage=intermediate -f'
-alias dirm='docker image rm'
 alias drmaia='drma -f; drmia -f'
+alias dcu='docker-compose up'
 dbvi() {
   local repository=$1
   local tag="${2:-latest}"
