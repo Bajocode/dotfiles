@@ -6,6 +6,7 @@ alias defsread='defaults read -g NSUserKeyEquivalents'
 # Shell
 alias vshell='vim ~/.shell'
 alias valias='vim ~/.alias'
+alias vcode='vim $HOME/Library/Application\ Support/Code/User/settings.json'
 alias zshrc='vim ~/.zshrc'
 alias bashrc='vim ~/.bashrc'
 alias szshrc='source ~/.zshrc'
