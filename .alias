@@ -93,6 +93,7 @@ alias crb="clusterrolebinding"
 alias kbb="kubectl run busybox --image=busybox:1.28 --rm -it --restart=Never --command --"
 alias kx="kubectx"
 alias kn="kubens"
+alias kcurl="kubectl run curl --image=radial/busyboxplus:curl -i --tty --rm"
 function copypullsecrets() {
   NAMESPACE=$1 \
     cat ~/dev/vinturas/pull.yaml | kubectl apply -n $NAMESPACE \
