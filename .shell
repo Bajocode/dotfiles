@@ -34,12 +34,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # kubernetes
-export KUBECONFIG=$HOME/.kube/gke_fabijanbajo_us-central1-a_fabijanbajo:$HOME/.bluemix/plugins/container-service/clusters/vin-dev/kube-config-ams03-vin-dev.yml:$HOME/.bluemix/plugins/container-service/clusters/orderer-staging/kube-config-fra02-orderer-staging.yml:$HOME/.bluemix/plugins/container-service/clusters/nvd-staging/kube-config-fra02-nvd-staging.yml:$HOME/.bluemix/plugins/container-service/clusters/axess-staging/kube-config-fra02-axess-staging.yml:$HOME/.bluemix/plugins/container-service/clusters/koopman-staging/kube-config-fra02-koopman-staging.yml:$HOME/.bluemix/plugins/container-service/clusters/vinturas-staging/kube-config-fra02-vinturas-staging.yml:$HOME/.bluemix/plugins/container-service/clusters/completenetwork-development/kube-config-fra02-completenetwork-development.yml:$HOME/.bluemix/plugins/container-service/clusters/completenetwork-sandbox/kube-config-fra02-completenetwork-sandbox.yml
+export KUBECONFIG=$HOME/Dropbox/dev/.kube/docker-desktop:$HOME/Dropbox/dev/.kube/gke_fabijanbajo_us-central1-a_fabijanbajo:$HOME/.bluemix/plugins/container-service/clusters/vin-dev/kube-config-ams03-vin-dev.yml:$HOME/.bluemix/plugins/container-service/clusters/orderer-staging/kube-config-fra02-orderer-staging.yml:$HOME/.bluemix/plugins/container-service/clusters/nvd-staging/kube-config-fra02-nvd-staging.yml:$HOME/.bluemix/plugins/container-service/clusters/axess-staging/kube-config-fra02-axess-staging.yml:$HOME/.bluemix/plugins/container-service/clusters/koopman-staging/kube-config-fra02-koopman-staging.yml:$HOME/.bluemix/plugins/container-service/clusters/vinturas-staging/kube-config-fra02-vinturas-staging.yml:$HOME/.bluemix/plugins/container-service/clusters/completenetwork-development/kube-config-fra02-completenetwork-development.yml:$HOME/.bluemix/plugins/container-service/clusters/completenetwork-sandbox/kube-config-fra02-completenetwork-sandbox.yml
+
 source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 PS1='$(kube_ps1)'$PS1
 # autoload -U colors; colors
-# source /usr/local/Cellar/zsh-kubectl-prompt/v1.0.1/etc/zsh-kubectl-prompt/kubectl.zsh
-# RPROMPT='%{$fg[blue]%}$ZSH_KUBECTL_PROMPT%{$reset_color%}'
 export K8S_EXAMPLE_SRV="k run --generator=run-pod/v1 -it srvlookup --image=tutum/dnsutils --rm --restart=Never -- dig SRV kubia.default.svc.cluster.local"
 export K8S_SUB="toolchain-dev.ams03.containers.appdomain.cloud" 
 
