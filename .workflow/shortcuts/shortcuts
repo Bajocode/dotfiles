@@ -8,3 +8,4 @@
 'Launch Vscode' = '$^~@v';
 'Launch OfficeMail' = '$^~@m';
 'Launch OfficeCalendar' = '$^~@c';
+'Launch Drive' = '$^~@d';
