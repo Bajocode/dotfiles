@@ -19,6 +19,7 @@ alias cdf='cd ~/dev/portfolio/fabijanbajo.com'
 alias cdn='cd ~/dev/portfolio/notesapp-microservices-ios'
 alias cdi='cd ~/Dropbox/dev/interview'
 alias c='cat'
+alias port='lsof -PiTCP -sTCP:LISTEN'
 
 # Vim
 alias vimUpdatePlugins='cd ~/.vim_runtime && git pull --rebase'
