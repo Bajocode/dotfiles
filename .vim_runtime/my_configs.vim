@@ -6,7 +6,7 @@ Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all --clangd-completer' }
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  }
 Plug 'b4b4r07/vim-hcl'
 Plug 'andrewstuart/vim-kubernetes'
@@ -32,7 +32,6 @@ autocmd BufRead,BufNewFile Makefile setlocal tabstop=8 shiftwidth=8 noexpandtab
 :set foldcolumn=0
 colorscheme ir_dark
 :set bg=dark
-" let g:lightline = { 'colorscheme': 'solarized' }
 
 " Window navigation
 map [D <C-W>h
