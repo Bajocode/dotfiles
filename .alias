@@ -17,9 +17,9 @@ alias cdd='cd ~/dev'
 alias cdvi='cd ~/dev/office/vinturas'
 alias cdf='cd ~/dev/portfolio/fabijanbajo.com'
 alias cdn='cd ~/dev/portfolio/notesapp-microservices-ios'
-alias cdi='cd ~/Dropbox/dev/interview'
+alias cdi='cd ~/dev/domains/interview'
 alias c='cat'
-alias port='lsof -PiTCP -sTCP:LISTEN'
+alias ports='lsof -PiTCP -sTCP:LISTEN'
 
 # Vim
 alias vimUpdatePlugins='cd ~/.vim_runtime && git pull --rebase'

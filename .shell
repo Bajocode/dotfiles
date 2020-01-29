@@ -52,6 +52,9 @@ fi
 CLOUD_SDK_HOME=/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk
 source "${CLOUD_SDK_HOME}/completion.zsh.inc"
 
+# Azure
+source /usr/local/etc/bash_completion.d/az
+
 # vault
 export VAULT_ADDR='http://127.0.0.1:8200'
 

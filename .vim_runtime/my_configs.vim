@@ -25,12 +25,14 @@ call plug#end()
 autocmd FileType go,c,cpp setlocal tabstop=8 shiftwidth=8 noexpandtab 
 autocmd FileType java,swift setlocal tabstop=4 shiftwidth=4 noexpandtab 
 autocmd BufRead,BufNewFile Makefile setlocal tabstop=8 shiftwidth=8 noexpandtab
+autocmd FileType markdown,javascript set nofoldenable 
 
 :set number
 :set noshowmode
 :set termguicolors 
 :set foldcolumn=0
-colorscheme ir_dark
+:set completeopt-=preview
+colorscheme ir_black
 :set bg=dark
 
 " Window navigation
@@ -61,14 +63,13 @@ map <leader>d "*d
 " Linting
 let g:ale_linter_aliases = {'typescriptreact': 'typescript'}
 let g:ale_linters = { 'javascript': ['eslint'], 'typescript': ['tslint', 'eslint'] }
-let g:ale_fixers = { 'javascript': ['eslint'], 'typescript': ['tslint'] }
+let g:ale_fixers = { 'javascript': ['eslint'], 'typescript': ['eslint'] }
 let g:ale_lint_on_enter = 1 
 let g:ale_linters_explicit = 1
 let g:ale_lint_on_text_changed = 'always'
 let g:tsuquyomi_disable_quickfix = 1
 
 " Autocomplete
-let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_enable_diagnostic_highlighting = 0
@@ -94,7 +95,6 @@ let g:mkdp_auto_close = 0
 let g:mkdp_refresh_slow = 0 "0: auto refresh markdown at cursor move
 map <leader>mo :MarkdownPreview<cr>
 map <leader>ms :MarkdownPreviewStop<cr>
-autocmd FileType markdown set nofoldenable 
 
 " Kubernetes
 map <leader>ka :KubeApply<cr>
