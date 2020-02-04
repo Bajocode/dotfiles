@@ -20,6 +20,7 @@ alias cdn='cd ~/dev/portfolio/notesapp-microservices-ios'
 alias cdi='cd ~/dev/domains/interview'
 alias c='cat'
 alias ports='lsof -PiTCP -sTCP:LISTEN'
+exportfile() { export $(grep -v '^#' $1 | xargs -0) }
 
 # Vim
 alias vimUpdatePlugins='cd ~/.vim_runtime && git pull --rebase'

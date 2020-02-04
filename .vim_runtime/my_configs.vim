@@ -22,10 +22,11 @@ call plug#end()
 :set tabstop=2
 :set shiftwidth=2
 :set expandtab
-autocmd FileType go,c,cpp setlocal tabstop=8 shiftwidth=8 noexpandtab 
+autocmd FileType go,c,cpp,Makefile setlocal tabstop=8 shiftwidth=8 noexpandtab 
 autocmd FileType java,swift setlocal tabstop=4 shiftwidth=4 noexpandtab 
-autocmd BufRead,BufNewFile Makefile setlocal tabstop=8 shiftwidth=8 noexpandtab
 autocmd FileType markdown,javascript set nofoldenable 
+autocmd BufRead,BufNewFile Dockerfile* set ft=Dockerfile
+autocmd BufRead,BufNewFile *.tpl set ft=go
 
 :set number
 :set noshowmode
@@ -99,6 +100,3 @@ map <leader>ms :MarkdownPreviewStop<cr>
 " Kubernetes
 map <leader>ka :KubeApply<cr>
 map <leader>kd :KubeDelete<cr>
-
-" Docker
-autocmd BufRead,BufNewFile Dockerfile* set ft=Dockerfile
