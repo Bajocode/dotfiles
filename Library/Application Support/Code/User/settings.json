@@ -2,7 +2,6 @@
     "workbench.startupEditor": "none",
     "window.zoomLevel": 0,
     "editor.tabSize": 2,
-    "editor.minimap.enabled": false,
     "editor.folding": false,
     "editor.hover.delay": 200,
     "editor.renderIndentGuides": false,
@@ -20,7 +19,6 @@
     "workbench.statusBar.feedback.visible": false,
     "zenMode.restore": true,
     "zenMode.centerLayout": false,
-    "workbench.statusBar.visible": true,
     "terminal.integrated.rendererType": "dom",
     "editor.rulers": [],
     "workbench.editor.showTabs": false,
@@ -31,7 +29,6 @@
         "vs-kubernetes.kubectl-path": "/Users/fabijanbajo/.vs-kubernetes/tools/kubectl/kubectl",
         "vs-kubernetes.draft-path": "/Users/fabijanbajo/.vs-kubernetes/tools/draft/darwin-amd64/draft"
     },
-    "workbench.activityBar.visible": true,
     "[dockerfile]": {},
     "workbench.sideBar.location": "right",
     "fabric.runtime": {
@@ -47,7 +44,7 @@
         "developmentMode": false
     },
     "workbench.colorCustomizations": {
-        "editorLineNumber.foreground": "#505050"
+        "editorLineNumber.foreground": "#505050",
     },
     "editor.tokenColorCustomizations": {
         "[Visual Studio Dark]": {
@@ -96,5 +93,10 @@
     "workbench.preferredDarkColorTheme": "Visual Studio Dark",
     "breadcrumbs.enabled": false,
     "workbench.colorTheme": "Visual Studio Dark",
-    "scm.diffDecorationsGutterVisibility": "hover"
+    "scm.diffDecorationsGutterVisibility": "hover",
+    "editor.minimap.enabled": false,
+    "editor.overviewRulerBorder": false,
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.vertical": "hidden",
+    "editor.scrollbar.verticalScrollbarSize": 0
 }
