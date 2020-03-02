@@ -94,5 +94,6 @@
     "workbench.colorTheme": "Visual Studio Dark",
     "typescript.preferences.quoteStyle": "single",
     "javascript.preferences.quoteStyle": "single",
-    "workbench.preferredDarkColorTheme": "Visual Studio Dark"
+    "workbench.preferredDarkColorTheme": "Visual Studio Dark",
+    "breadcrumbs.enabled": false
 }
