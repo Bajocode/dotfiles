@@ -91,9 +91,10 @@
     "ibm-blockchain-platform.ext.enableLocalFabric": true,
     "ibm-blockchain-platform.ext.bypassPreReqs": true,
     "zenMode.hideLineNumbers": false,
-    "workbench.colorTheme": "Visual Studio Dark",
     "typescript.preferences.quoteStyle": "single",
     "javascript.preferences.quoteStyle": "single",
     "workbench.preferredDarkColorTheme": "Visual Studio Dark",
-    "breadcrumbs.enabled": false
+    "breadcrumbs.enabled": false,
+    "workbench.colorTheme": "Visual Studio Dark",
+    "scm.diffDecorationsGutterVisibility": "hover"
 }
