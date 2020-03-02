@@ -9,9 +9,6 @@ dotfiles_do pull
 # Refresh workflow
 $HOME/workflow-sync
 
-# Update vim plugins
-vim +PluginInstall +qall
-
 # Reset finder
 killall cfprefsd
 killall Finder
