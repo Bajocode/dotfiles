@@ -1,6 +1,6 @@
 {
     "workbench.startupEditor": "none",
-    "window.zoomLevel": 0,
+    "window.zoomLevel": -1,
     "editor.tabSize": 2,
     "editor.folding": false,
     "editor.hover.delay": 200,
