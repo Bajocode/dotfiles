@@ -152,6 +152,9 @@ alias ics='ic ks messages && ic billing resource-group-usage Vinturas-Dev && ic 
 alias icclusters='ibmcloud ks clusters -s | awk '\''{print $1}'\'' | xargs -I {} ibmcloud ks cluster config --cluster {}'
 alias icl='ic login --sso'
 
+# Hetzner cloud
+alias hc='hcloud'
+
 # python
 alias python=/usr/local/bin/python3
 
