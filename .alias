@@ -150,6 +150,7 @@ alias icb='ic billing resource-group-usage Vinturas-Dev'
 alias icd='open https://eu-de.containers.cloud.ibm.com/kubeproxy/clusters/3dcb2622595f41aab94ebd5818f17cb1/service/#!/overview?namespace=_all'
 alias ics='ic ks messages && ic billing resource-group-usage Vinturas-Dev && ic ks cluster-get --cluster vin-dev'
 alias icclusters='ibmcloud ks clusters -s | awk '\''{print $1}'\'' | xargs -I {} ibmcloud ks cluster config --cluster {}'
+alias icl='ic login --sso'
 
 # python
 alias python=/usr/local/bin/python3
