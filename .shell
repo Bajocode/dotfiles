@@ -36,7 +36,7 @@ export NVM_DIR="$HOME/.nvm"
 # kubernetes
 config_personal_root=$HOME/Dropbox/dev/.kube
 config_office_root=$HOME/.bluemix/plugins/container-service/clusters
-config_personal=$config_personal_root/docker-desktop:$config_personal_root/gke_fabijanbajo_us-central1-a_fabijanbajo
+config_personal=$config_personal_root/docker-desktop:$config_personal_root/gke_fabijanbajo_us-central1-a_fabijanbajo:$config_personal_root/portfolio
 config_office_dev=$config_office_root/vin-dev/kube-config-ams03-vin-dev.yml
 config_office_pilot=$config_office_root/orderer-staging/kube-config-fra02-orderer-staging.yml:$config_office_root/nvd-staging/kube-config-fra02-nvd-staging.yml:$config_office_root/axess-staging/kube-config-fra02-axess-staging.yml:$config_office_root/koopman-staging/kube-config-fra02-koopman-staging.yml:$config_office_root/vinturas-staging/kube-config-fra02-vinturas-staging.yml
 config_office_sandbox=$config_office_root/completenetwork-sandbox/kube-config-fra02-completenetwork-sandbox.yml
@@ -45,11 +45,17 @@ config_office_prod=$config_office_root/axess-prod/kube-config-fra02-axess-prod.y
 
 export KUBECONFIG=$config_personal:$config_office_dev:$config_office_sandbox:$config_office_development:$config_office_pilot:$config_office_prod
 
+function get_cluster_short() { 
+  if [[ $(helm version --short) == *"v2"* ]]; then helm_v="2"; elif [[ $(helm version --short) == *"v3"* ]]; then helm_v="3"; fi
+  echo "${1}(h${helm_v})"
+}
+
+KUBE_PS1_CLUSTER_FUNCTION=get_cluster_short
+KUBE_PS1_SYMBOL_ENABLE=false
+KUBE_PS1_PREFIX=""
+KUBE_PS1_SUFFIX=""
 source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 PS1='$(kube_ps1)'$PS1
-# autoload -U colors; colors
-export K8S_EXAMPLE_SRV="k run --generator=run-pod/v1 -it srvlookup --image=tutum/dnsutils --rm --restart=Never -- dig SRV kubia.default.svc.cluster.local"
-export K8S_SUB="toolchain-dev.ams03.containers.appdomain.cloud" 
 
 # IBM cloud
 IC_DIR=/usr/local/ibmcloud
@@ -68,7 +74,7 @@ if [ -d $AZ_DIR ]; then
 fi
 
 # vault
-export VAULT_ADDR='http://127.0.0.1:8200'
+export VAULT_ADDR='"http://127.0.0.1:8200'
 
 # fastlane
 export LC_ALL=en_US.UTF-8

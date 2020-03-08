@@ -108,6 +108,14 @@ function webhook_helm_sync() {
   cd ~/dev/portfolio/helmcharts && gacp "Update k8s-webhooks helm configuration" > /dev/null 2>&1 && \
   helm repo update
 }
+function switch_helm() {
+  if [[ $(helm version --short) == *"v2"* ]]; then 
+    brew unlink helm@2 && brew link helm
+  elif [[ $(helm version --short) == *"v3"* ]]; then
+    brew unlink helm && brew link helm@2 --force
+  fi
+  exec $SHELL && source .zshrc
+}
 
 # Notes
 alias n='cd /Users/fabijanbajo/Dropbox/dev/notes; vim'
