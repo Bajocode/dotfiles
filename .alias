@@ -95,13 +95,6 @@ alias kbb="kubectl run busybox --image=busybox:1.28 --rm -it --restart=Never --c
 alias kx="kubectx"
 alias kn="kubens"
 alias kcurl="kubectl run curl --image=radial/busyboxplus:curl -i --tty --rm"
-function copypullsecrets() {
-  NAMESPACE=$1 \
-    cat ~/dev/vinturas/pull.yaml | kubectl apply -n $NAMESPACE \
-    -f - kubectl patch serviceaccount default \
-    -n $NAMESPACE \
-    -p '{"imagePullSecrets": [{"name": "ibmcloud-docker-pullsecret"}]}'
-}
 function webhook_helm_sync() {
   helm package ~/dev/portfolio/k8s-webhook/k8s-webhook -d ~/dev/portfolio/helmcharts  && \
   helm repo index ~/dev/portfolio/helmcharts --url https://bajocode.github.io/helmcharts/ && \
@@ -115,6 +108,18 @@ function switch_helm() {
     brew unlink helm && brew link helm@2 --force
   fi
   exec $SHELL && source .zshrc
+}
+function copy_gcloud_pullsecrets() {
+  from_ns=$1
+  to_ns=$2
+
+  kubectl get secret gcr-secret \
+    --namespace=$from_ns \
+    --export -o yaml | kubectl apply --namespace=$to_ns -f -
+
+  kubectl patch serviceaccounts default \
+    --namespace=$to_ns \
+    -p '{"imagePullSecrets": [{"name": "gcr-secret"}]}'
 }
 
 # Notes
