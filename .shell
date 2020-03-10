@@ -42,8 +42,9 @@ config_office_pilot=$config_office_root/orderer-staging/kube-config-fra02-ordere
 config_office_sandbox=$config_office_root/completenetwork-sandbox/kube-config-fra02-completenetwork-sandbox.yml
 config_office_development=$config_office_root/completenetwork-development/kube-config-fra02-completenetwork-development.yml
 config_office_prod=$config_office_root/axess-prod/kube-config-fra02-axess-prod.yml:$config_office_root/cat-prod/ca-fra02-cat-prod.yml/$config_office_root/koopman-prod/kube-config-fra02-koopman-prod.yml:$config_office_root/nvd-prod/kube-config-fra02-nvd-prod.yml:$config_office_root/orderer-prod/kube-config-fra02-orderer-prod.yml:$config_office_root/vinturas-prod/kube-config-fra02-vinturas-prod.yml:$config_office_root/cat-prod/kube-config-fra02-cat-prod.yml:$config_office_root/koopman-prod/kube-config-fra02-koopman-prod.yml
+config_office_acc=$config_office_root/axess-acc/kube-config-fra02-axess-acc.yml:$config_office_root/cat-acc/ca-fra02-cat-acc.yml/$config_office_root/koopman-acc/kube-config-fra02-koopman-acc.yml:$config_office_root/nvd-acc/kube-config-fra02-nvd-acc.yml:$config_office_root/orderer-acc/kube-config-fra02-orderer-acc.yml:$config_office_root/vinturas-acc/kube-config-fra02-vinturas-acc.yml:$config_office_root/cat-acc/kube-config-fra02-cat-acc.yml:$config_office_root/koopman-acc/kube-config-fra02-koopman-acc.yml
 
-export KUBECONFIG=$config_personal:$config_office_dev:$config_office_sandbox:$config_office_development:$config_office_pilot:$config_office_prod
+export KUBECONFIG=$config_personal:$config_office_dev:$config_office_sandbox:$config_office_development:$config_office_pilot:$config_office_prod:$config_office_acc
 
 function get_cluster_short() { 
   if [[ $(helm version --short) == *"v2"* ]]; then helm_v="2"; elif [[ $(helm version --short) == *"v3"* ]]; then helm_v="3"; fi
