@@ -168,6 +168,9 @@ alias icl='ic login --sso'
 # Hetzner cloud
 alias hc='hcloud'
 
+# Google cloud
+alias gc='gcloud'
+
 # python
 alias python=/usr/local/bin/python3
 

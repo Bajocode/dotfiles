@@ -14,6 +14,7 @@ Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'alvan/vim-closetag'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'lilyball/vim-swift'
+Plug 'heavenshell/vim-jsdoc'
 
 call plug#end()
 
@@ -78,6 +79,9 @@ let g:ycm_global_ycm_extra_conf = '~/.vim_runtime/my_plugins/YouCompleteMe/third
 map <leader>yg :YcmCompleter GoTo<cr>
 map <leader>yd :YcmCompleter GoToDefinition<cr>
 map <leader>yr :YcmCompleter GoToReferences<cr>
+let g:ycm_semantic_triggers = {
+    \   'css': [ 're!^\s{2}', 're!:\s+' ],
+    \ }
 
 " vim-closetag
 let g:closetag_filenames = '*.html,*.tsx,*.jsx'
