@@ -15,6 +15,7 @@ Plug 'alvan/vim-closetag'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'lilyball/vim-swift'
 Plug 'heavenshell/vim-jsdoc'
+Plug 'lifepillar/vim-solarized8'
 
 call plug#end()
 
@@ -34,7 +35,8 @@ autocmd BufRead,BufNewFile *.tpl set ft=go
 :set termguicolors 
 :set foldcolumn=0
 :set completeopt-=preview
-colorscheme ir_black
+colorscheme solarized8
+let g:lightline = { 'colorscheme': 'solarized_dark' }
 :set bg=dark
 
 " Window navigation

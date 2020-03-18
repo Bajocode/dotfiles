@@ -125,6 +125,9 @@ function copy_gcloud_pullsecrets() {
 # Notes
 alias n='cd /Users/fabijanbajo/Dropbox/dev/notes; vim'
 
+# Articles
+alias a='cd /Users/fabijanbajo/Dropbox/system/articles; vim'
+
 # Carreer
 alias c='cd ~/Dropbox/career && open .'
 
