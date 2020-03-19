@@ -36,7 +36,9 @@ autocmd BufRead,BufNewFile *.tpl set ft=go
 :set foldcolumn=0
 :set completeopt-=preview
 colorscheme solarized8
-let g:lightline = { 'colorscheme': 'solarized_dark' }
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ }
 :set bg=dark
 
 " Window navigation
