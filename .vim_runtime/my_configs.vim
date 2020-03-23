@@ -24,7 +24,9 @@ call plug#end()
 :set tabstop=2
 :set shiftwidth=2
 :set expandtab
-autocmd FileType go,c,cpp,Makefile setlocal tabstop=8 shiftwidth=8 noexpandtab 
+filetype on
+autocmd FileType go,c,cpp setlocal tabstop=8 shiftwidth=8 noexpandtab 
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 autocmd FileType java,swift setlocal tabstop=4 shiftwidth=4 noexpandtab 
 autocmd FileType markdown,javascript set nofoldenable 
 autocmd BufRead,BufNewFile Dockerfile* set ft=Dockerfile

@@ -10,3 +10,4 @@
 'Launch OfficeCalendar' = '$^~@c';
 'Launch Drive' = '$^~@d';
 'Launch AlgoExpert' = '$^~@a';
+'Launch Typora' = '$^~@t';
