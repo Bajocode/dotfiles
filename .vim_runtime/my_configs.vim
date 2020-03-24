@@ -8,6 +8,7 @@ Plug 'heavenshell/vim-jsdoc'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  }
 Plug 'alvan/vim-closetag'
 Plug 'lilyball/vim-swift'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -62,10 +63,14 @@ map <leader>d "*d
 " Linting & completion
 let g:ale_lint_on_enter = 1 
 let g:ale_lint_on_text_changed = 'always'
-let g:ale_completion_enabled = 1
-let g:ale_completion_delay = 0
 let g:ale_lint_delay = 0
-:set completeopt-=preview
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+let g:ale_linter_aliases = {'jsx': 'javascript'}
+let g:ale_linters = {
+\   'javascript': ['eslint']
+\}
 
 " vim-closetag
 let g:closetag_filenames = '*.html,*.tsx,*.jsx'
