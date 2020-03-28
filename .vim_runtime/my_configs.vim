@@ -3,8 +3,9 @@ call plug#begin('~/.vim_runtime/my_plugins')
 
 Plug 'twerth/ir_black'
 Plug 'lifepillar/vim-solarized8'
-Plug 'peitalin/vim-jsx-typescript'
 Plug 'heavenshell/vim-jsdoc'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  }
 Plug 'alvan/vim-closetag'
 Plug 'lilyball/vim-swift'
@@ -67,10 +68,9 @@ let g:ale_lint_delay = 0
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-let g:ale_linter_aliases = {'jsx': 'javascript'}
-let g:ale_linters = {
-\   'javascript': ['eslint']
-\}
+let g:ale_linters = { 'javascript': ['eslint'], 'typescript': ['tslint', 'eslint'] }
+let g:ale_fixers = { 'javascript': ['eslint'], 'typescript': ['eslint'] }
+let g:ale_fix_on_save = 1
 
 " vim-closetag
 let g:closetag_filenames = '*.html,*.tsx,*.jsx'
