@@ -30,11 +30,9 @@ autocmd BufRead,BufNewFile *.tpl set ft=go
 :set noshowmode
 :set termguicolors 
 :set foldcolumn=0
-colorscheme solarized8
-let g:lightline = {
-      \ 'colorscheme': 'solarized',
-      \ }
 :set bg=dark
+colorscheme solarized8
+let g:lightline = { 'colorscheme': 'solarized' }
 
 " Window navigation
 map [D <C-W>h
@@ -85,3 +83,8 @@ let g:mkdp_auto_close = 0
 let g:mkdp_refresh_slow = 0 "0: auto refresh markdown at cursor move
 map <leader>mo :MarkdownPreview<cr>
 map <leader>ms :MarkdownPreviewStop<cr>
+
+" Goyo
+autocmd VimEnter * Goyo 100x100%
+hi EndOfBuffer guifg=bg
+let g:goyo_linenr = 1
