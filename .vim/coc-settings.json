@@ -1,0 +1,5 @@
+{
+  "python.jediEnabled": false,
+  "diagnostic.displayByAle": true,
+  "java.home": "/Library/Java/JavaVirtualMachines/openjdk-11.0.2.jdk/Contents/Home"
+}

@@ -32,6 +32,7 @@ autocmd BufRead,BufNewFile *.tpl set ft=go
 :set foldcolumn=0
 :set bg=dark
 colorscheme solarized8
+hi EndOfBuffer guifg=bg
 let g:lightline = { 'colorscheme': 'solarized' }
 
 " Window navigation
@@ -60,15 +61,9 @@ map <leader>p "*p
 map <leader>d "*d
 
 " Linting & completion
-let g:ale_lint_on_enter = 1 
-let g:ale_lint_on_text_changed = 'always'
-let g:ale_lint_delay = 0
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-let g:ale_linters = { 'javascript': ['eslint'], 'typescript': ['tslint', 'eslint'] }
-let g:ale_fixers = { 'javascript': ['eslint'], 'typescript': ['eslint'] }
-let g:ale_fix_on_save = 1
 
 " vim-closetag
 let g:closetag_filenames = '*.html,*.tsx,*.jsx'
@@ -85,6 +80,28 @@ map <leader>mo :MarkdownPreview<cr>
 map <leader>ms :MarkdownPreviewStop<cr>
 
 " Goyo
-autocmd VimEnter * Goyo 100x100%
-hi EndOfBuffer guifg=bg
+autocmd VimEnter * Goyo
 let g:goyo_linenr = 1
+let g:goyo_height = "100%"
+let g:goyo_width = "100%"
+
+function! s:goyo_enter()
+  let b:quitting = 0
+  let b:quitting_bang = 0
+  autocmd QuitPre <buffer> let b:quitting = 1
+  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+endfunction
+
+function! s:goyo_leave()
+  " Quit Vim if this is the only remaining buffer
+  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+    if b:quitting_bang
+      qa!
+    else
+      qa
+    endif
+  endif
+endfunction
+
+autocmd! User GoyoEnter call <SID>goyo_enter()
+autocmd! User GoyoLeave call <SID>goyo_leave()
