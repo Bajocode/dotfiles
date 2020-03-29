@@ -14,26 +14,27 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " Vim
+filetype on
 :syntax enable
 :set tabstop=2
 :set shiftwidth=2
 :set expandtab
-filetype on
-autocmd FileType go,c,cpp setlocal tabstop=8 shiftwidth=8 noexpandtab 
-autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
-autocmd FileType java,swift setlocal tabstop=4 shiftwidth=4 noexpandtab 
-autocmd FileType markdown,javascript set nofoldenable 
-autocmd BufRead,BufNewFile Dockerfile* set ft=Dockerfile
-autocmd BufRead,BufNewFile *.tpl set ft=go
-
 :set number
 :set noshowmode
 :set termguicolors 
 :set foldcolumn=0
 :set bg=dark
 colorscheme solarized8
-hi EndOfBuffer guifg=bg
 let g:lightline = { 'colorscheme': 'solarized' }
+hi EndOfBuffer guifg=bg
+hi VertSplit guibg=bg guifg=bg
+autocmd FileType * set showtabline=0
+autocmd FileType go,c,cpp setlocal tabstop=8 shiftwidth=8 noexpandtab 
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
+autocmd FileType java,swift setlocal tabstop=4 shiftwidth=4 noexpandtab 
+autocmd FileType markdown,javascript set nofoldenable 
+autocmd BufRead,BufNewFile Dockerfile* set ft=Dockerfile
+autocmd BufRead,BufNewFile *.tpl set ft=go
 
 " Window navigation
 map [D <C-W>h
@@ -78,30 +79,3 @@ let g:mkdp_auto_close = 0
 let g:mkdp_refresh_slow = 0 "0: auto refresh markdown at cursor move
 map <leader>mo :MarkdownPreview<cr>
 map <leader>ms :MarkdownPreviewStop<cr>
-
-" Goyo
-autocmd VimEnter * Goyo
-let g:goyo_linenr = 1
-let g:goyo_height = "100%"
-let g:goyo_width = "100%"
-
-function! s:goyo_enter()
-  let b:quitting = 0
-  let b:quitting_bang = 0
-  autocmd QuitPre <buffer> let b:quitting = 1
-  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
-endfunction
-
-function! s:goyo_leave()
-  " Quit Vim if this is the only remaining buffer
-  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
-    if b:quitting_bang
-      qa!
-    else
-      qa
-    endif
-  endif
-endfunction
-
-autocmd! User GoyoEnter call <SID>goyo_enter()
-autocmd! User GoyoLeave call <SID>goyo_leave()
