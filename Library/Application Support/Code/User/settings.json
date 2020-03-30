@@ -63,14 +63,11 @@
     "extensions.ignoreRecommendations": false,
     "prettier.singleQuote": true,
     "ibm-blockchain-platform.fabric.runtime": {
-        "ports": {
-            "orderer": 17050,
-            "peerRequest": 17051,
-            "peerChaincode": 17052,
-            "peerEventHub": 17053,
-            "certificateAuthority": 17054,
-            "couchDB": 17055,
-            "logs": 17056
+        "1 Org Local Fabric": {
+            "ports": {
+                "startPort": 17050,
+                "endPort": 17070
+            }
         }
     },
     "ibm-blockchain-platform.fabric.wallets": [],
