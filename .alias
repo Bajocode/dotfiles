@@ -17,7 +17,7 @@ alias cdd='cd ~/dev'
 alias cdvi='cd ~/dev/office/vinturas'
 alias cdf='cd ~/dev/portfolio/fabijanbajo.com'
 alias cdn='cd ~/dev/portfolio/notesapp-microservices-ios'
-alias cdi='cd ~/dev/domains/interview'
+alias cdi='cd ~/Dropbox/interview'
 alias c='cat'
 alias ports='lsof -PiTCP -sTCP:LISTEN'
 exportfile() { export $(grep -v '^#' $1 | xargs -0) }
