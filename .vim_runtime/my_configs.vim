@@ -32,7 +32,7 @@ autocmd FileType * set showtabline=0
 autocmd FileType go,c,cpp setlocal tabstop=8 shiftwidth=8 noexpandtab 
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 autocmd FileType java,swift setlocal tabstop=4 shiftwidth=4 noexpandtab 
-autocmd FileType markdown,javascript set nofoldenable 
+autocmd FileType markdown,javascript set nofoldenable
 autocmd BufRead,BufNewFile Dockerfile* set ft=Dockerfile
 autocmd BufRead,BufNewFile *.tpl set ft=go
 
@@ -65,6 +65,9 @@ map <leader>d "*d
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" jsx return indentation issue fix
+let g:jsx_ext_required = 1
 
 " vim-closetag
 let g:closetag_filenames = '*.html,*.tsx,*.jsx'
