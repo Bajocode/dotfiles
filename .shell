@@ -83,3 +83,6 @@ export VAULT_ADDR='"http://127.0.0.1:8200'
 # fastlane
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+# dot files updates
+dot pull
