@@ -5,7 +5,6 @@ Plug 'twerth/ir_black'
 Plug 'lifepillar/vim-solarized8'
 Plug 'heavenshell/vim-jsdoc'
 Plug 'mxw/vim-jsx'
-Plug 'pangloss/vim-javascript'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  }
 Plug 'alvan/vim-closetag'
 Plug 'lilyball/vim-swift'
@@ -15,6 +14,7 @@ call plug#end()
 
 " Vim
 filetype on
+filetype plugin indent on
 :syntax enable
 :set tabstop=2
 :set shiftwidth=2
