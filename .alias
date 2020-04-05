@@ -182,7 +182,7 @@ alias python=/usr/local/bin/python3
 alias vm='VBoxManage'
 
 # Typora
-alias typora='open -A /Applications/Typora.app'
+alias typora='open -a /Applications/Typora.app'
 
 # local alias
 source ~/.alias.local
