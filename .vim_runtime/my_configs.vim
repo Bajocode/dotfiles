@@ -67,7 +67,15 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Coc
-let g:coc_global_extensions = ['coc-tsserver', 'coc-eslint', 'coc-java', 'coc-python', 'coc-yaml']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-java', 'coc-python', 'coc-yaml']
+
+" Ale
+let g:ale_lint_delay = 0
+let g:ale_lint_on_enter = 1
+let g:ale_lint_on_text_changed = 'always'
+let g:ale_linters = {'javascript': ['eslint'], 'typescript': ['eslint'], 'python': ['flake8']}
+let g:ale_fixers = {'javascript': ['eslint'], 'typescript': ['eslint'], 'python': ['autopep8']}
+let g:ale_fix_on_save = 1
 
 " jsx return indentation issue fix
 let g:jsx_ext_required = 1
