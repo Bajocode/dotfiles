@@ -6,6 +6,7 @@ alias defsread='defaults read -g NSUserKeyEquivalents'
 # Shell
 alias vshell='vim ~/.shell'
 alias valias='vim ~/.alias'
+alias xs='exec $SHELL && source ~/.zshrc'
 alias vcode='vim $HOME/Library/Application\ Support/Code/User/settings.json'
 alias zshrc='vim ~/.zshrc'
 alias bashrc='vim ~/.bashrc'
@@ -133,6 +134,9 @@ alias c='cd ~/Dropbox/career && open .'
 
 # Jupyter notebook
 alias jn='jupyter notebook'
+
+# nodemon
+alias npy='nodemon --exec python3'
 
 # Git
 gremote_gitlab_personal() { git remote add origin git@personal.gitlab.com:Bajocode/$1.git; }
