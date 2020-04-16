@@ -23,7 +23,7 @@ filetype plugin indent on
 :set noshowmode
 :set termguicolors 
 :set foldcolumn=0
-:set bg=dark
+:set bg=light
 colorscheme solarized8
 let g:lightline = { 'colorscheme': 'solarized' }
 hi EndOfBuffer guifg=bg
@@ -67,7 +67,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Coc
-let g:coc_global_extensions = ['coc-tsserver', 'coc-java', 'coc-python', 'coc-yaml']
+let g:coc_global_extensions = ['coc-tsserver',  'coc-java', 'coc-python', 'coc-yaml', 'coc-sourcekit']
 
 " Ale
 let g:ale_lint_delay = 0
