@@ -1,5 +1,5 @@
 " Plugins
-call plug#begin('~/.vim_runtime/my_plugins')
+call plug#begin('$HOME/.vim_runtime/my_plugins')
 
 Plug 'twerth/ir_black'
 Plug 'lifepillar/vim-solarized8'
@@ -23,7 +23,11 @@ filetype plugin indent on
 :set noshowmode
 :set termguicolors 
 :set foldcolumn=0
-:set bg=light
+if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
+   set background=dark
+else
+  set background=light
+endif
 colorscheme solarized8
 let g:lightline = { 'colorscheme': 'solarized' }
 hi EndOfBuffer guifg=bg
