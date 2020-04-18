@@ -179,8 +179,10 @@ alias hc='hcloud'
 # Google cloud
 alias gc='gcloud'
 
-# python
-alias python=/usr/local/bin/python3
+# objc
+objc() {
+  clang $1 -fobjc-arc -fmodules -mmacosx-version-min=10.6 -o $2
+}
 
 # VirtualBox
 alias vm='VBoxManage'

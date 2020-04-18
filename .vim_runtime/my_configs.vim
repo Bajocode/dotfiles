@@ -39,6 +39,7 @@ autocmd FileType java,swift setlocal tabstop=4 shiftwidth=4 noexpandtab
 autocmd FileType markdown,javascript set nofoldenable
 autocmd BufRead,BufNewFile Dockerfile* set ft=Dockerfile
 autocmd BufRead,BufNewFile *.tpl set ft=go
+autocmd BufRead,BufNewFile *.m set ft=objc
 
 " Window navigation
 map [D <C-W>h
@@ -71,7 +72,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Coc
-let g:coc_global_extensions = ['coc-tsserver',  'coc-java', 'coc-python', 'coc-yaml', 'coc-sourcekit']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-java', 'coc-python', 'coc-yaml', 'coc-sourcekit']
 
 " Ale
 let g:ale_lint_delay = 0
