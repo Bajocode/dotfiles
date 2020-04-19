@@ -81,6 +81,8 @@ let g:ale_lint_on_text_changed = 'always'
 let g:ale_linters = {'javascript': ['eslint'], 'typescript': ['eslint'], 'python': ['flake8'], 'shell': ['shellcheck']}
 let g:ale_fixers = {'javascript': ['eslint'], 'typescript': ['eslint'], 'python': ['autopep8']}
 let g:ale_fix_on_save = 1
+" While learning c
+autocmd BufEnter *.c ALEDisable
 
 " jsx return indentation issue fix
 let g:jsx_ext_required = 1
