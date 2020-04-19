@@ -39,7 +39,11 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 11)
 # kubernetes
 config_personal_root=$HOME/Dropbox/dev/.kube
 config_office_root=$HOME/.bluemix/plugins/container-service/clusters
+<<<<<<< Updated upstream
 config_personal=$HOME/.kube/docker-desktop:$config_personal_root/portfolio-cluster/config
+=======
+config_personal=$config_personal_root/docker-desktop:$config_personal_root/portfolio-cluster/config:$config_office_root/ibmcloud/kube-config-hou02-ibmcloud.yml
+>>>>>>> Stashed changes
 config_office_dev=$config_office_root/vin-dev/kube-config-ams03-vin-dev.yml
 config_office_pilot=$config_office_root/orderer-staging/kube-config-fra02-orderer-staging.yml:$config_office_root/nvd-staging/kube-config-fra02-nvd-staging.yml:$config_office_root/axess-staging/kube-config-fra02-axess-staging.yml:$config_office_root/koopman-staging/kube-config-fra02-koopman-staging.yml:$config_office_root/vinturas-staging/kube-config-fra02-vinturas-staging.yml
 config_office_sandbox=$config_office_root/completenetwork-sandbox/kube-config-fra02-completenetwork-sandbox.yml
