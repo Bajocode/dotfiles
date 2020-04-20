@@ -19,7 +19,7 @@ alias cdvi='cd ~/dev/office/vinturas'
 alias cdf='cd ~/dev/portfolio/fabijanbajo.com'
 alias cdn='cd ~/dev/portfolio/notesapp-microservices-ios'
 alias i='cd ~/Dropbox/interview'
-alias c='cat'
+alias c='cd ~/Dropbox/dev/c'
 alias ports='lsof -PiTCP -sTCP:LISTEN'
 exportfile() { export $(grep -v '^#' $1 | xargs -0) }
 
@@ -128,9 +128,6 @@ alias n='cd /Users/fabijanbajo/Dropbox/dev/notes; vim'
 
 # Articles
 alias a='cd /Users/fabijanbajo/Dropbox/system/articles; vim'
-
-# Carreer
-alias c='cd ~/Dropbox/career && open .'
 
 # Jupyter notebook
 alias jn='jupyter notebook'
