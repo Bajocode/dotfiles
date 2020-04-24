@@ -18,10 +18,14 @@ alias cdd='cd ~/dev'
 alias cdvi='cd ~/dev/office/vinturas'
 alias cdf='cd ~/dev/portfolio/fabijanbajo.com'
 alias cdn='cd ~/dev/portfolio/notesapp-microservices-ios'
-alias i='cd ~/Dropbox/interview'
-alias c='cd ~/Dropbox/dev/c'
 alias ports='lsof -PiTCP -sTCP:LISTEN'
 exportfile() { export $(grep -v '^#' $1 | xargs -0) }
+
+# SE
+alias i='cd ~/Dropbox/interview'
+alias c='cd ~/Dropbox/dev/c'
+alias ciu='cd ~/Dropbox/interview/resources/ciu'
+alias r='cd ~/Dropbox/interview/resources'
 
 # Vim
 alias vimUpdatePlugins='cd ~/.vim_runtime && git pull --rebase'
