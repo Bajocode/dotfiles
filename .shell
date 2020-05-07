@@ -15,12 +15,18 @@ export GOPATH="$(brew --prefix)/Cellar/go/1.12.6/"
 export GOROOT="/usr/local/opt/go/libexec/"
 export PATH=$PATH:$(go env GOPATH)/bin
 
+# python
+alias python='python3'
+
 # https://hyperledger-fabric.readthedocs.io/en/latest/install.html
 export PATH=$PATH:$HOME/hyperledger-fabric/fabric-samples/bin
 
 # Fastlane
 export export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+# Markdown
+export MEDIA_PATH=$HOME/Dropbox/.media
 
 # Homebrew Cask
 export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
@@ -83,6 +89,9 @@ export VAULT_ADDR='"http://127.0.0.1:8200'
 # fastlane
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+# oreilly
+function oreilly() { $HOME/Dropbox/books/safaribooks/safaribooks.py $1 }
 
 # dot files updates
 dot pull --quiet
