@@ -23,6 +23,7 @@ filetype plugin indent on
 :set noshowmode
 :set termguicolors 
 :set foldcolumn=0
+:set colorcolumn=80
 if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
    set background=dark
 else
