@@ -138,6 +138,7 @@ alias jn='jupyter notebook'
 
 # nodemon
 alias npy='nodemon --exec python3'
+alias p='python'
 
 # Git
 gremote_gitlab_personal() { git remote add origin git@personal.gitlab.com:Bajocode/$1.git; }

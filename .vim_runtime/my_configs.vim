@@ -19,7 +19,7 @@ filetype plugin indent on
 :set tabstop=2
 :set shiftwidth=2
 :set expandtab
-:set number
+" :set number
 :set noshowmode
 :set termguicolors 
 :set foldcolumn=0
@@ -103,7 +103,7 @@ map <leader>mo :MarkdownPreview<cr>
 map <leader>ms :MarkdownPreviewStop<cr>
 
 " Goyo
-let g:goyo_width = '60%'
+let g:goyo_width = '80'
 let g:goyo_height = '75%'
 autocmd! User GoyoEnter call <SID>goyo_enter()
 autocmd! User GoyoLeave call <SID>goyo_leave()
