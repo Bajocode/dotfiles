@@ -99,8 +99,7 @@ let g:ctrlp_custom_ignore = 'node_modules\|dist\|dist'
 let g:mkdp_auto_start = 0
 let g:mkdp_auto_close = 0 
 let g:mkdp_refresh_slow = 0 "0: auto refresh markdown at cursor move
-map <leader>mo :MarkdownPreview<cr>
-map <leader>ms :MarkdownPreviewStop<cr>
+map <leader>m :MarkdownPreview<cr>
 
 " Goyo
 let g:goyo_width = '80'
