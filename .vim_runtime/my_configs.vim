@@ -33,6 +33,7 @@ colorscheme solarized8_flat
 let g:lightline = { 'colorscheme': 'solarized' }
 hi EndOfBuffer guifg=bg
 hi VertSplit guibg=bg guifg=bg
+hi! link pythonSpaceError StatusLineNC
 autocmd FileType * set showtabline=0
 autocmd FileType go,c,cpp setlocal tabstop=8 shiftwidth=8 noexpandtab 
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
