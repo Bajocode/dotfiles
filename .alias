@@ -22,7 +22,7 @@ alias ports='lsof -PiTCP -sTCP:LISTEN'
 exportfile() { export $(grep -v '^#' $1 | xargs -0) }
 
 # SE
-alias i='cd ~/Dropbox/interview'
+alias i='cd ~/Dropbox/interview && vim'
 alias c='cd ~/Dropbox/dev/c'
 alias ciu='cd ~/Dropbox/interview/resources/ciu'
 alias r='cd ~/Dropbox/interview/resources'
