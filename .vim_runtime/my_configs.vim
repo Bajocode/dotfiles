@@ -42,6 +42,9 @@ autocmd BufRead,BufNewFile Dockerfile* set ft=Dockerfile
 autocmd BufRead,BufNewFile *.tpl set ft=go
 autocmd BufRead,BufNewFile *.m set ft=objc
 
+" Line numbers
+map <leader>n :set invnumber<cr>
+
 " Window navigation
 map [D <C-W>h
 map [C <C-W>l
