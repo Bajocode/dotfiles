@@ -88,6 +88,7 @@ let g:ale_fixers = {'javascript': ['eslint'], 'typescript': ['eslint'], 'python'
 let g:ale_fix_on_save = 1
 " While learning c
 autocmd BufEnter *.c ALEDisable
+autocmd FileType yaml ALEDisable
 
 " jsx return indentation issue fix
 let g:jsx_ext_required = 1
