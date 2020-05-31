@@ -18,6 +18,7 @@ alias cdd='cd ~/dev'
 alias cdvi='cd ~/dev/office/vinturas'
 alias cdf='cd ~/dev/portfolio/fabijanbajo.com'
 alias cdn='cd ~/dev/portfolio/notesapp-microservices-ios'
+alias cdr='cd ~/Dropbox/dev/redhat'
 alias ports='lsof -PiTCP -sTCP:LISTEN'
 exportfile() { export $(grep -v '^#' $1 | xargs -0) }
 
@@ -189,8 +190,11 @@ objc() {
 # VirtualBox
 alias vm='VBoxManage'
 
-# Typora
-alias typora='open -a /Applications/Typora.app'
+# Soundcloud downloader
+scd() {
+  scdl --onlymp3 -l $1 --path ~/Desktop
+}
+
 
 # local alias
 source ~/.alias.local
