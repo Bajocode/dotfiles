@@ -42,22 +42,11 @@ export NVM_DIR="$HOME/.nvm"
 # java
 export JAVA_HOME=$(/usr/libexec/java_home -v 11)
 
-# kubernetes personal
-config_personal_root=$HOME/Dropbox/dev/.kube
-config_personal=$HOME/.kube/docker-desktop:$config_personal_root/portfolio-cluster/config
-
-# kubernetes office
-vindev="$HOME/.bluemix/plugins/container-service/clusters/vin-dev-d4f00fd546fd408d8578b61a9143638b/kube-config-ams03-vin-dev.yml"
-sandbox="$HOME/.bluemix/plugins/container-service/clusters/completenetwork-sandbox-bnsc3pvf02c0of0fd01g/kube-config-fra02-completenetwork-sandbox.yml"
-dev="$HOME/.bluemix/plugins/container-service/clusters/completenetwork-development-bn1elaef0kdql1v6g690/kube-config-fra02-completenetwork-development.yml"
-
-export KUBECONFIG=$vindev:$sandbox:$dev
-
+# kubernetes
 function get_cluster_short() { 
   if [[ $(helm version --short) == *"v2"* ]]; then helm_v="2"; elif [[ $(helm version --short) == *"v3"* ]]; then helm_v="3"; fi
   echo "${1}(h${helm_v})"
 }
-
 KUBE_PS1_CLUSTER_FUNCTION=get_cluster_short
 KUBE_PS1_SYMBOL_ENABLE=false
 KUBE_PS1_PREFIX=""
