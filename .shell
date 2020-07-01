@@ -79,3 +79,6 @@ export LANG=en_US.UTF-8
 
 # oreilly
 function oreilly() { $HOME/Dropbox/books/safaribooks/safaribooks.py $1 }
+
+# dot files updates
+dot pull --quiet
