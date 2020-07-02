@@ -81,5 +81,9 @@ export LANG=en_US.UTF-8
 # oreilly
 function oreilly() { $HOME/Dropbox/books/safaribooks/safaribooks.py $1 }
 
+# resty
+source /usr/local/opt/resty/share/resty/resty
+
 # dot files updates
 dot pull --quiet
+
